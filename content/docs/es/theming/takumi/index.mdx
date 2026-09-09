@@ -1,0 +1,156 @@
+---
+title: Temas
+description: Configura temas, colores, tipografía y espaciado de PDF para Takumi.
+---
+
+import { ThemePreview } from "@/components/theme-preview";
+import { ThemePreviewGrid } from "@/components/theme-preview-grid";
+
+<ThemePreview base="takumi" />
+
+## Instalación
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Comando</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/theme-provider
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copia y pega el siguiente código en tu proyecto.</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<Step>
+  Actualiza las rutas de importación para que coincidan con la configuración de
+  tu proyecto.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Uso
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { professionalTheme } from "@/lib/pdf-themes/professional";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={professionalTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```
+
+## Tokens de color
+
+Todos los valores de color deben ser cadenas hexadecimales (por ejemplo, `#1a1a1a`). React PDF admite hex, `rgb()` y `hsl()`, pero NO `oklch`.
+
+| Token               | Propósito                        |
+| ------------------- | -------------------------------- |
+| `foreground`        | Color de texto principal         |
+| `background`        | Fondo de página                  |
+| `muted`             | Fondos secundarios               |
+| `mutedForeground`   | Leyendas, notas al pie           |
+| `primary`           | Color de marca/acento            |
+| `primaryForeground` | Texto sobre fondos primarios     |
+| `border`            | Bordes de tabla, divisores       |
+| `accent`            | Elementos de llamada a la acción |
+| `destructive`       | Estados de error                 |
+| `success`           | Estados de éxito                 |
+| `warning`           | Estados de advertencia           |
+| `info`              | Estados informativos             |
+
+## Tokens primitivos
+
+Los primitivos definen las escalas de diseño básicas disponibles para los temas:
+
+- **Escala tipográfica** — proporción de tercera mayor (1.25) con base de 12pt
+- **Escala de espaciado** — sistema de cuadrícula de 4pt
+- **Pesos de fuente** — 400–700
+- **Alturas de línea** — 1.2–1.6
+- **Radio de borde** — 0–8pt
+
+## Temas personalizados
+
+Usa la interfaz `PdfcnTheme` para crear temas personalizados conservando la forma completa del tema.
+
+```tsx
+import type { PdfcnTheme } from "@/registry/themes";
+import { defaultPrimitives } from "@/registry/themes";
+
+export const oceanTheme: PdfcnTheme = {
+  name: "ocean",
+  primitives: defaultPrimitives,
+  colors: {
+    foreground: "#0f172a",
+    background: "#ffffff",
+    primary: "#0369a1",
+    accent: "#0ea5e9",
+    muted: "#f1f5f9",
+    border: "#e2e8f0",
+    mutedForeground: "#64748b",
+    primaryForeground: "#ffffff",
+    destructive: "#dc2626",
+    success: "#16a34a",
+    warning: "#d97706",
+    info: "#0ea5e9",
+  },
+  typography: {
+    body: { fontFamily: "Helvetica", fontSize: 11, lineHeight: 1.6 },
+    heading: {
+      fontFamily: "Times-Roman",
+      fontWeight: 700,
+      lineHeight: 1.25,
+      fontSize: { h1: 32, h2: 24, h3: 20, h4: 16, h5: 14, h6: 12 },
+    },
+  },
+  spacing: {
+    page: { marginTop: 56, marginRight: 48, marginBottom: 56, marginLeft: 48 },
+    sectionGap: 28,
+    paragraphGap: 10,
+    componentGap: 14,
+  },
+  page: { size: "A4", orientation: "portrait" },
+};
+```
+
+## Temas disponibles
+
+<ThemePreviewGrid />

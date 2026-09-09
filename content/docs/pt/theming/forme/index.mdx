@@ -1,0 +1,156 @@
+---
+title: Temas
+description: Configure temas, cores, tipografia e espaçamento de PDF para o Forme.
+---
+
+import { ThemePreview } from "@/components/theme-preview";
+import { ThemePreviewGrid } from "@/components/theme-preview-grid";
+
+<ThemePreview base="forme" />
+
+## Instalação
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Comando</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/theme-provider
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copie e cole o código a seguir no seu projeto.</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<Step>
+  Atualize os caminhos de importação para corresponder à configuração do seu
+  projeto.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Uso
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { professionalTheme } from "@/lib/pdf-themes/professional";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={professionalTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```
+
+## Tokens de cor
+
+Todos os valores de cor devem ser strings hexadecimais (por exemplo, `#1a1a1a`). O React PDF suporta hex, `rgb()` e `hsl()` — mas NÃO `oklch`.
+
+| Token               | Finalidade                     |
+| ------------------- | ------------------------------ |
+| `foreground`        | Cor de texto principal         |
+| `background`        | Fundo da página                |
+| `muted`             | Fundos secundários             |
+| `mutedForeground`   | Legendas, notas de rodapé      |
+| `primary`           | Cor de marca/destaque          |
+| `primaryForeground` | Texto sobre fundos primários   |
+| `border`            | Bordas de tabela, divisores    |
+| `accent`            | Elementos de chamada para ação |
+| `destructive`       | Estados de erro                |
+| `success`           | Estados de sucesso             |
+| `warning`           | Estados de aviso               |
+| `info`              | Estados informativos           |
+
+## Tokens primitivos
+
+Os primitivos definem as escalas de design brutas disponíveis para os temas:
+
+- **Escala tipográfica** — proporção de terça maior (1.25) com base de 12pt
+- **Escala de espaçamento** — sistema de grade de 4pt
+- **Pesos de fonte** — 400–700
+- **Alturas de linha** — 1.2–1.6
+- **Raio de borda** — 0–8pt
+
+## Temas personalizados
+
+Use a interface `PdfcnTheme` para criar temas personalizados preservando a forma completa do tema.
+
+```tsx
+import type { PdfcnTheme } from "@/registry/themes";
+import { defaultPrimitives } from "@/registry/themes";
+
+export const oceanTheme: PdfcnTheme = {
+  name: "ocean",
+  primitives: defaultPrimitives,
+  colors: {
+    foreground: "#0f172a",
+    background: "#ffffff",
+    primary: "#0369a1",
+    accent: "#0ea5e9",
+    muted: "#f1f5f9",
+    border: "#e2e8f0",
+    mutedForeground: "#64748b",
+    primaryForeground: "#ffffff",
+    destructive: "#dc2626",
+    success: "#16a34a",
+    warning: "#d97706",
+    info: "#0ea5e9",
+  },
+  typography: {
+    body: { fontFamily: "Helvetica", fontSize: 11, lineHeight: 1.6 },
+    heading: {
+      fontFamily: "Times-Roman",
+      fontWeight: 700,
+      lineHeight: 1.25,
+      fontSize: { h1: 32, h2: 24, h3: 20, h4: 16, h5: 14, h6: 12 },
+    },
+  },
+  spacing: {
+    page: { marginTop: 56, marginRight: 48, marginBottom: 56, marginLeft: 48 },
+    sectionGap: 28,
+    paragraphGap: 10,
+    componentGap: 14,
+  },
+  page: { size: "A4", orientation: "portrait" },
+};
+```
+
+## Temas disponíveis
+
+<ThemePreviewGrid />

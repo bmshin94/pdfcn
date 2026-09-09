@@ -1,0 +1,110 @@
+---
+title: "Link"
+description: "Link clicável estilizado para documentos PDF."
+---
+
+<ComponentPreview base="forme" name="link" hideCode />
+
+## Instalação
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Comando</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/link
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Instale as seguintes dependências:</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>Copie e cole o código a seguir no seu projeto.</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/link/link.tsx"
+  base="forme"
+  title="components/pdf/link/link.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Atualize os caminhos de importação de acordo com a configuração do seu
+  projeto.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Uso
+
+```tsx
+import { Link } from "@/components/pdf/link";
+```
+
+```tsx
+<Link href="https://example.com">Example</Link>
+```
+
+## Referência da API
+
+### Link
+
+| Propriedade | Tipo                                | Padrão      |
+| ----------- | ----------------------------------- | ----------- |
+| `href`      | `string`                            | -           |
+| `align`     | `'left' \| 'center' \| 'right'`     | `'left'`    |
+| `color`     | `string`                            | -           |
+| `variant`   | `'default' \| 'muted' \| 'primary'` | `'default'` |
+| `underline` | `'always' \| 'none'`                | `'always'`  |

@@ -1,0 +1,124 @@
+---
+title: "Signature"
+description: "Bloc de signature avec nom et libellé."
+---
+
+<ComponentPreview base="takumi" name="signature" hideCode />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Commande</TabsTrigger>
+  <TabsTrigger value="manual">Manuel</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/signature
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Installez les dépendances suivantes :</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>Copiez-collez le code suivant dans votre projet.</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/signature/signature.tsx"
+  base="takumi"
+  title="components/pdf/signature/signature.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Mettez à jour les chemins d'import pour qu'ils correspondent à la
+  configuration de votre projet.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Utilisation
+
+```tsx
+import { PdfSignatureBlock } from "@/components/pdf/signature";
+```
+
+```tsx
+<PdfSignatureBlock name="Jane Doe" label="Authorized Signature" />
+```
+
+## Référence de l'API
+
+### PdfSignatureBlock
+
+| Propriété | Type                                 | Par défaut |
+| --------- | ------------------------------------ | ---------- |
+| `variant` | `'single' \| 'double' \| 'inline'`   | `'single'` |
+| `label`   | `string`                             | -          |
+| `name`    | `string`                             | -          |
+| `title`   | `string`                             | -          |
+| `date`    | `string`                             | -          |
+| `signers` | `[SignatureSigner, SignatureSigner]` | -          |
+| `style`   | `Style`                              | -          |

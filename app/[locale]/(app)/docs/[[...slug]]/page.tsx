@@ -1,5 +1,6 @@
 import { findNeighbour } from "fumadocs-core/page-tree";
 import { ArrowLeftIcon, ArrowRightIcon, ArrowUpRightIcon } from "lucide-react";
+import { useIntlayer } from "next-intlayer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -27,13 +28,26 @@ export const revalidate = false;
 export const dynamic = "force-static";
 export const dynamicParams = false;
 
-export const generateStaticParams = () => source.generateParams();
+export const generateStaticParams = () => {
+  const seen = new Set<string>();
+  const params: { slug: string[] }[] = [];
+
+  for (const { slug } of source.generateParams()) {
+    const key = slug.join("/");
+    if (!seen.has(key)) {
+      seen.add(key);
+      params.push({ slug });
+    }
+  }
+
+  return params;
+};
 
 export const generateMetadata = async (props: {
-  params: Promise<{ slug?: string[] }>;
+  params: Promise<{ locale: string; slug?: string[] }>;
 }) => {
   const params = await props.params;
-  const page = source.getPage(params.slug);
+  const page = source.getPage(params.slug, params.locale);
 
   if (!page) {
     notFound();
@@ -52,10 +66,12 @@ export const generateMetadata = async (props: {
 const buildBreadcrumbs = (
   slugs: string[],
   pageTitle: string,
-  pageUrl: string
+  pageUrl: string,
+  homeLabel: string,
+  docsLabel: string
 ) => {
   const items: { name: string; path: string }[] = [
-    { name: "Home", path: ROUTES.HOME },
+    { name: homeLabel, path: ROUTES.HOME },
   ];
 
   if (slugs.length === 0) {
@@ -63,7 +79,7 @@ const buildBreadcrumbs = (
     return items;
   }
 
-  items.push({ name: "Docs", path: ROUTES.DOCS });
+  items.push({ name: docsLabel, path: ROUTES.DOCS });
 
   let currentPath = ROUTES.DOCS;
   for (let i = 0; i < slugs.length - 1; i += 1) {
@@ -75,21 +91,31 @@ const buildBreadcrumbs = (
   return items;
 };
 
-const Page = async (props: { params: Promise<{ slug?: string[] }> }) => {
+const Page = async (props: {
+  params: Promise<{ locale: string; slug?: string[] }>;
+}) => {
   const params = await props.params;
-  const page = source.getPage(params.slug);
+  const page = source.getPage(params.slug, params.locale);
 
   if (!page) {
     notFound();
   }
 
+  const content = useIntlayer("docs-page");
+
   const doc = page.data;
   const MdxContent = doc.body;
-  const neighbours = findNeighbour(source.pageTree, page.url);
+  const neighbours = findNeighbour(source.getPageTree(params.locale), page.url);
   const markdownUrl = getPageMarkdownUrl(page).url;
 
   const { links } = doc as { links?: { doc?: string; api?: string } };
-  const breadcrumbs = buildBreadcrumbs(params.slug ?? [], doc.title, page.url);
+  const breadcrumbs = buildBreadcrumbs(
+    params.slug ?? [],
+    doc.title,
+    page.url,
+    content.breadcrumbHome.value,
+    content.breadcrumbDocs.value
+  );
   const baseSwitcher = getDocsBaseSwitcherProps(params.slug);
 
   return (
@@ -134,10 +160,10 @@ const Page = async (props: { params: Promise<{ slug?: string[] }> }) => {
                             className="extend-touch-target size-8 md:size-7"
                             tooltip={{
                               icon: <ArrowLeftIcon />,
-                              title: "Previous Page",
+                              title: content.previousPageTooltip.value,
                             }}
                           >
-                            <span className="sr-only">Previous</span>
+                            <span className="sr-only">{content.previous}</span>
                           </DocsNavLink>
                         )}
                         {neighbours.next && (
@@ -147,10 +173,10 @@ const Page = async (props: { params: Promise<{ slug?: string[] }> }) => {
                             className="extend-touch-target size-8 md:size-7"
                             tooltip={{
                               icon: <ArrowRightIcon />,
-                              title: "Next Page",
+                              title: content.nextPageTooltip.value,
                             }}
                           >
-                            <span className="sr-only">Next</span>
+                            <span className="sr-only">{content.next}</span>
                           </DocsNavLink>
                         )}
                       </div>
@@ -167,14 +193,14 @@ const Page = async (props: { params: Promise<{ slug?: string[] }> }) => {
                     {links?.doc && (
                       <Badge asChild variant="secondary">
                         <Link href={links.doc} target="_blank" rel="noreferrer">
-                          Docs <ArrowUpRightIcon />
+                          {content.docsBadge} <ArrowUpRightIcon />
                         </Link>
                       </Badge>
                     )}
                     {links?.api && (
                       <Badge asChild variant="secondary">
                         <Link href={links.api} target="_blank" rel="noreferrer">
-                          API Reference <ArrowUpRightIcon />
+                          {content.apiReferenceBadge} <ArrowUpRightIcon />
                         </Link>
                       </Badge>
                     )}

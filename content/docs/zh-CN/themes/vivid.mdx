@@ -1,0 +1,59 @@
+---
+title: "鲜艳"
+description: "深紫罗兰配色，Nunito 圆润无衬线字体，活泼又不失专业。"
+---
+
+import { vividTheme } from "@/registry/themes";
+
+<ComponentPreview
+  base="forme"
+  name="invoice-creative"
+  theme={vividTheme}
+  hideCode
+/>
+
+## 安装
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">命令</TabsTrigger>
+  <TabsTrigger value="manual">手动</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/theme-vivid
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>将以下代码复制并粘贴到你的项目中。</Step>
+
+<ComponentSource src="registry/themes/vivid.ts" title="lib/themes/vivid.ts" />
+
+<Step>更新导入路径以匹配你的项目设置。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 用法
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { vividTheme } from "@/lib/pdf-themes/vivid";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={vividTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```

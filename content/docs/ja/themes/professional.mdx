@@ -1,0 +1,62 @@
+---
+title: "プロフェッショナル"
+description: "セリフ体の見出し、洗練されたジンク/スレートのパレット、フォーマルな文書の雰囲気。"
+---
+
+import { professionalTheme } from "@/registry/themes";
+
+<ComponentPreview
+  base="forme"
+  name="invoice-classic"
+  theme={professionalTheme}
+  hideCode
+/>
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/theme-professional
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>以下のコードをプロジェクトにコピーして貼り付けてください。</Step>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  title="lib/themes/professional.ts"
+/>
+
+<Step>プロジェクトの構成に合わせてインポートパスを更新してください。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { professionalTheme } from "@/lib/pdf-themes/professional";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={professionalTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```

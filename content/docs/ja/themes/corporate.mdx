@@ -1,0 +1,62 @@
+---
+title: "コーポレート"
+description: "ブルーグレーのパレットとLatoサンセリフ体で、構造的かつ信頼感のある印象。"
+---
+
+import { corporateTheme } from "@/registry/themes";
+
+<ComponentPreview
+  base="forme"
+  name="invoice-corporate"
+  theme={corporateTheme}
+  hideCode
+/>
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/theme-corporate
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>次のコードをプロジェクトにコピーして貼り付けます。</Step>
+
+<ComponentSource
+  src="registry/themes/corporate.ts"
+  title="lib/themes/corporate.ts"
+/>
+
+<Step>プロジェクトの構成に合わせてインポートパスを更新してください。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { corporateTheme } from "@/lib/pdf-themes/corporate";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={corporateTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```

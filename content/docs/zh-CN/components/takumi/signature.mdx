@@ -1,0 +1,121 @@
+---
+title: "签名"
+description: "带姓名和标签的签名区块。"
+---
+
+<ComponentPreview base="takumi" name="signature" hideCode />
+
+## 安装
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">命令</TabsTrigger>
+  <TabsTrigger value="manual">手动</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/signature
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>安装以下依赖项：</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>将以下代码复制并粘贴到你的项目中。</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/signature/signature.tsx"
+  base="takumi"
+  title="components/pdf/signature/signature.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>更新导入路径以匹配你的项目设置。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使用方法
+
+```tsx
+import { PdfSignatureBlock } from "@/components/pdf/signature";
+```
+
+```tsx
+<PdfSignatureBlock name="Jane Doe" label="Authorized Signature" />
+```
+
+## API 参考
+
+### PdfSignatureBlock
+
+| 属性      | 类型                                 | 默认值     |
+| --------- | ------------------------------------ | ---------- |
+| `variant` | `'single' \| 'double' \| 'inline'`   | `'single'` |
+| `label`   | `string`                             | -          |
+| `name`    | `string`                             | -          |
+| `title`   | `string`                             | -          |
+| `date`    | `string`                             | -          |
+| `signers` | `[SignatureSigner, SignatureSigner]` | -          |
+| `style`   | `Style`                              | -          |

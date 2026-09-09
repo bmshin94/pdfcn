@@ -1,5 +1,8 @@
+import { getIntlayer } from "intlayer";
 import { ExternalLink, Heart, Plus, Star } from "lucide-react";
 import type { Metadata } from "next";
+import { useIntlayer } from "next-intlayer";
+import { getLocale } from "next-intlayer/server";
 import Image from "next/image";
 
 import { ExternalLinkButton } from "@/components/external-link-button";
@@ -47,38 +50,36 @@ const SponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => {
   );
 };
 
-export const metadata: Metadata = createPageMetadata({
-  description:
-    "Support pdfcn — beautiful PDF components for React. Sponsor tiers, stargazers, and how to contribute.",
-  path: ROUTES.SPONSOR,
-  title: "Sponsor",
-});
+export const generateMetadata = async (): Promise<Metadata> => {
+  const locale = await getLocale();
+  const content = getIntlayer("sponsor-page", locale);
+
+  return createPageMetadata({
+    description: content.metadataDescription,
+    path: ROUTES.SPONSOR,
+    title: content.metadataTitle,
+  });
+};
 
 const SponsorPage = async () => {
   const stargazers = await getStargazers();
+  const content = useIntlayer("sponsor-page");
 
   return (
     <PageTransition>
       <section className="container-wrapper relative">
         <div className="container max-w-2xl flex flex-col items-center gap-4 py-16 text-center md:py-20 lg:py-24">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl from-foreground via-foreground to-foreground/65 bg-linear-to-b bg-clip-text text-transparent">
-            Support the project
+            {content.heroTitle}
           </h1>
           <p className="text-base text-muted-foreground text-balance">
-            pdfcn is a collection of beautifully designed, accessible, and
-            customizable PDF components for React. Every component is free and
-            that&apos;s not changing.
+            {content.heroDescriptionPrimary}
           </p>
           <p className="text-sm text-muted-foreground text-balance">
-            I&apos;m not going to paywall features or gate components behind a
-            sponsorship tier. But if pdfcn made your project better, or you just
-            like that this exists in the open, sponsoring is a nice way to say
-            so. It helps me justify spending real time on it instead of treating
-            it like a side-of-desk thing.
+            {content.heroDescriptionSecondary}
           </p>
           <p className="text-sm text-muted-foreground text-balance">
-            Any amount is genuinely appreciated. And if money&apos;s not your
-            thing, starring the repo or sharing something you liked works too.
+            {content.heroDescriptionTertiary}
           </p>
           <ExternalLinkButton
             sound="heart"
@@ -87,7 +88,7 @@ const SponsorPage = async () => {
             href={LINK.SPONSOR}
           >
             <Heart />
-            Sponsor on GitHub
+            {content.sponsorOnGithubLabel}
             <ExternalLink className="size-3.5 opacity-60" />
           </ExternalLinkButton>
         </div>
@@ -185,7 +186,7 @@ const SponsorPage = async () => {
             <Card className="shadow-none gap-4 py-4">
               <CardHeader className="flex items-center gap-3 px-4">
                 <h3 className="text-xs font-bold uppercase tracking-wide text-foreground">
-                  Stargazers
+                  {content.stargazersLabel}
                 </h3>
                 <span className="text-xs tabular-nums text-muted-foreground">
                   {stargazers.length}
@@ -221,17 +222,16 @@ const SponsorPage = async () => {
         <div className="container flex flex-col items-center gap-4 py-16 md:py-20 lg:py-24">
           <div className="flex flex-col items-center gap-2 text-center">
             <h2 className="text-lg font-bold tracking-tight">
-              Want to back the project?
+              {content.ctaTitle}
             </h2>
             <p className="max-w-sm text-sm text-muted-foreground">
-              Every bit helps — whether it&apos;s a sponsorship, a star, or
-              sharing something you found useful.
+              {content.ctaDescription}
             </p>
           </div>
           <div className="flex items-center gap-3">
             <ExternalLinkButton sound="heart" href={LINK.SPONSOR}>
               <Heart />
-              Become a Sponsor
+              {content.becomeSponsorLabel}
             </ExternalLinkButton>
             <ExternalLinkButton
               sound="star"
@@ -239,7 +239,7 @@ const SponsorPage = async () => {
               href={LINK.GITHUB}
             >
               <Star />
-              Star on GitHub
+              {content.starOnGithubLabel}
             </ExternalLinkButton>
           </div>
         </div>

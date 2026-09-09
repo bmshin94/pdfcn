@@ -1,0 +1,120 @@
+---
+title: "徽章"
+description: "用于标签和标记的紧凑状态徽章。"
+---
+
+<ComponentPreview base="takumi" name="badge" hideCode />
+
+## 安装
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">命令</TabsTrigger>
+  <TabsTrigger value="manual">手动</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/badge
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>安装以下依赖：</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>将以下代码复制粘贴到你的项目中。</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/badge/badge.tsx"
+  base="takumi"
+  title="components/pdf/badge/badge.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>更新导入路径以匹配你的项目结构。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 用法
+
+```tsx
+import { Badge } from "@/components/pdf/badge";
+```
+
+```tsx
+<Badge>Badge</Badge>
+```
+
+## API 参考
+
+### Badge
+
+| 属性         | 类型                                                                                       | 默认值      |
+| ------------ | ------------------------------------------------------------------------------------------ | ----------- |
+| `label`      | `string`                                                                                   | -           |
+| `children`   | `string`                                                                                   | -           |
+| `variant`    | `'default' \| 'primary' \| 'success' \| 'warning' \| 'destructive' \| 'info' \| 'outline'` | `'default'` |
+| `size`       | `'sm' \| 'md' \| 'lg'`                                                                     | `'md'`      |
+| `background` | `string`                                                                                   | -           |
+| `color`      | `string`                                                                                   | -           |

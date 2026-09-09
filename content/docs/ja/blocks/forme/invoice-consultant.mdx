@@ -1,0 +1,95 @@
+---
+title: "コンサルタント請求書"
+description: "コンサルタント風の請求書テンプレート。"
+---
+
+<ComponentPreview base="forme" name="invoice-consultant" hideCode />
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/invoice-consultant
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>以下の依存関係をインストールします：</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>次のコードをプロジェクトにコピー＆ペーストします。</Step>
+
+<ComponentSource
+  src="registry/bases/forme/blocks/invoice-consultant/invoice-consultant.tsx"
+  base="forme"
+  title="components/pdf/blocks/invoice-consultant/invoice-consultant.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>プロジェクトの構成に合わせてインポートパスを更新します。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import { InvoiceConsultantDocument } from "@/components/pdf/invoice-consultant";
+```
+
+```tsx
+<InvoiceConsultantDocument />
+```

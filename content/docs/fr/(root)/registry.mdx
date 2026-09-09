@@ -1,0 +1,71 @@
+---
+title: Registre
+description: Apprenez à utiliser le registre pdfcn avec le CLI de shadcn.
+---
+
+Le registre **pdfcn** fournit les composants, blocs et thèmes de Takumi et Forme dans le [format de registre de shadcn](https://ui.shadcn.com/docs/registry). Enregistrez l'espace de noms une fois dans `components.json`, puis récupérez les éléments par nom avec le CLI.
+
+## Configuration
+
+Ajoutez une entrée **registries** pour ce site. Consultez la [documentation du registre de shadcn](https://ui.shadcn.com/docs/registry) pour tous les champs et comportements de `components.json`.
+
+```json
+{
+  "registries": {
+    "@pdfcn": "https://pdfcn.dev/r/{name}.json"
+  }
+}
+```
+
+Vous pouvez remplacer `@pdfcn` par un autre espace de noms ; il doit simplement correspondre à ce que vous passez à `shadcn add`.
+
+## Utilisation
+
+Les éléments sont espacés par base : `takumi/` pour Takumi et `forme/` pour Forme.
+
+Les fichiers du registre suivent ces destinations :
+
+- Les composants s'installent dans `components/ui/`.
+- Les blocs s'installent dans le répertoire de blocs configuré.
+
+Les composants déclarent leurs dépendances, donc installer un composant ne nécessite pas de configuration supplémentaire.
+
+### Takumi
+
+Installer un composant :
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/text
+```
+
+Installer un bloc :
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/invoice-minimal
+```
+
+Sans alias de registre, utilisez l'URL complète (comme sur chaque page de documentation) :
+
+```bash
+npx shadcn@latest add https://pdfcn.dev/r/takumi/text.json
+```
+
+### Forme
+
+Installer un composant :
+
+```bash
+npx shadcn@latest add @pdfcn/forme/text
+```
+
+Installer un bloc :
+
+```bash
+npx shadcn@latest add @pdfcn/forme/invoice-minimal
+```
+
+Sans alias de registre, utilisez l'URL complète (comme sur chaque page de documentation) :
+
+```bash
+npx shadcn@latest add https://pdfcn.dev/r/forme/text.json
+```

@@ -72,22 +72,22 @@ export default helloWorldContent;
 
 ```json5 fileName="hello-world.en.content.json" contentDeclarationFormat="json"
 {
-  "$schema": "https://intlayer.org/schema.json",
-  "key": "hello-world",
-  "locale": "en", // Important
-  "content": {
-    "multilingualContent": "Title of my component",
+  $schema: "https://intlayer.org/schema.json",
+  key: "hello-world",
+  locale: "en", // Important
+  content: {
+    multilingualContent: "Title of my component",
   },
 }
 ```
 
 ```json5 fileName="hello-world.es.content.json" contentDeclarationFormat="json"
 {
-  "$schema": "https://intlayer.org/schema.json",
-  "key": "hello-world",
-  "locale": "es", // Important
-  "content": {
-    "multilingualContent": "Título de mi componente",
+  $schema: "https://intlayer.org/schema.json",
+  key: "hello-world",
+  locale: "es", // Important
+  content: {
+    multilingualContent: "Título de mi componente",
   },
 }
 ```

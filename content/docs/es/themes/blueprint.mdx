@@ -1,0 +1,65 @@
+---
+title: "Plano"
+description: "Pizarra oscura con acento cian, encabezados monoespaciados, precisión técnica."
+---
+
+import { blueprintTheme } from "@/registry/themes";
+
+<ComponentPreview
+  base="forme"
+  name="invoice-classic"
+  theme={blueprintTheme}
+  hideCode
+/>
+
+## Instalación
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Comando</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/theme-blueprint
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copia y pega el siguiente código en tu proyecto.</Step>
+
+<ComponentSource
+  src="registry/themes/blueprint.ts"
+  title="lib/themes/blueprint.ts"
+/>
+
+<Step>
+  Actualiza las rutas de importación para que coincidan con la configuración de
+  tu proyecto.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Uso
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { blueprintTheme } from "@/lib/pdf-themes/blueprint";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={blueprintTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```

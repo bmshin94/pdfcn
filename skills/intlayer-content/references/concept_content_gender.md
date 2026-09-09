@@ -52,15 +52,15 @@ export default myGenderContent;
 
 ```json5 fileName="**/*.content.json" contentDeclarationFormat="json"
 {
-  "$schema": "https://intlayer.org/schema.json",
-  "key": "my_key",
-  "content": {
-    "myGender": {
-      "nodeType": "gender",
-      "gender": {
-        "male": "my content for male users",
-        "female": "my content for female users",
-        "fallback": "my content when gender is not specified", // Optional
+  $schema: "https://intlayer.org/schema.json",
+  key: "my_key",
+  content: {
+    myGender: {
+      nodeType: "gender",
+      gender: {
+        male: "my content for male users",
+        female: "my content for female users",
+        fallback: "my content when gender is not specified", // Optional
       },
     },
   },

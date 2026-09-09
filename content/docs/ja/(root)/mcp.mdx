@@ -1,0 +1,28 @@
+---
+title: MCP
+description: shadcn MCP（Model Context Protocol）サーバーを pdfcn で使用する方法を学びます。
+---
+
+[MCP](https://modelcontextprotocol.io/) は、アプリケーションが LLM にコンテキストを提供する方法を標準化するオープンプロトコルです。shadcn CLI は MCP サーバーを登録でき、エディタがレジストリコンポーネントを検出できるようにします——同じ CLI を通じて **pdfcn** からインストールした項目も含まれます。
+
+## MCP の設定
+
+実行します：
+
+```bash
+npx shadcn@latest mcp init
+```
+
+プロンプトで MCP クライアントを選択し、そのクライアントで MCP サーバーを有効にしてセットアップを完了します。
+
+## 使用方法
+
+MCP を有効にすると、IDE に **Takumi** と **Forme** のパターン、および pdfcn レジストリコンポーネントを使用するよう依頼できます。プロンプトの例：
+
+- **Table**、**Heading**、**Text**、**KeyValue** を使用して請求書のレイアウトを構築します。
+- PDF 文档に **QRCode** と **Signature** を追加します。
+- **Graph**、**DataTable**、**PageHeader** を使用してレポートを作成します。
+- **Section**、**Stack**、**Divider**、**KeepTogether** を使用して PDF をレイアウトします。
+- **PageBreak**、**PageNumber**、**PageFooter** を使用してマルチページフローを実装します。
+
+`npx shadcn@latest add` と各ドキュメントページの JSON URL を使用して、このレジストリからコンポーネントをインストールします。コンポーネントは適切なデフォルト値で動作します。

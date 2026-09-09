@@ -1,0 +1,112 @@
+---
+title: "スタック"
+description: "間隔を持つ垂直スタック。"
+---
+
+<ComponentPreview base="forme" name="stack" hideCode />
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/stack
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>以下の依存関係をインストールしてください：</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>以下のコードをコピーしてプロジェクトに貼り付けてください。</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/stack/stack.tsx"
+  base="forme"
+  title="components/pdf/stack/stack.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>インポートパスをプロジェクトの構成に合わせて更新してください。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import { Stack } from "@/components/pdf/stack";
+import { Text } from "@/components/pdf/text";
+```
+
+```tsx
+<Stack gap="md">
+  <Text>One</Text>
+  <Text>Two</Text>
+</Stack>
+```
+
+## APIリファレンス
+
+### Stack
+
+| プロパティ  | 型                                                      | デフォルト |
+| ----------- | ------------------------------------------------------- | ---------- |
+| `gap`       | `'none' \| 'sm' \| 'md' \| 'lg' \| 'xl'`                | 'md'       |
+| `direction` | `'vertical' \| 'horizontal'`                            | 'vertical' |
+| `align`     | `'start' \| 'center' \| 'end' \| 'stretch'`             | 'start'    |
+| `justify`   | `'start' \| 'center' \| 'end' \| 'between' \| 'around'` | 'start'    |
+| `wrap`      | `boolean`                                               | false      |
+| `noWrap`    | `boolean`                                               | false      |

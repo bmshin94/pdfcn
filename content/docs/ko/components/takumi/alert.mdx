@@ -1,0 +1,121 @@
+---
+title: "알림"
+description: "정보, 성공, 경고, 오류 변형을 지원하는 알림 박스입니다."
+---
+
+<ComponentPreview base="takumi" name="alert" hideCode />
+
+## 설치
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">명령어</TabsTrigger>
+  <TabsTrigger value="manual">수동</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/alert
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>다음 의존성을 설치하세요:</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>다음 코드를 프로젝트에 복사하여 붙여넣으세요.</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/alert/alert.tsx"
+  base="takumi"
+  title="components/pdf/alert/alert.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>프로젝트 구조에 맞게 import 경로를 업데이트하세요.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 사용법
+
+```tsx
+import { PdfAlert } from "@/components/pdf/alert";
+```
+
+```tsx
+<PdfAlert variant="info" title="Info">
+  Alert body
+</PdfAlert>
+```
+
+## API 참조
+
+### PdfAlert
+
+| 속성         | 타입                                          | 기본값   |
+| ------------ | --------------------------------------------- | -------- |
+| `variant`    | `'info' \| 'success' \| 'warning' \| 'error'` | `'info'` |
+| `title`      | `string`                                      | -        |
+| `children`   | `ReactNode`                                   | -        |
+| `showIcon`   | `boolean`                                     | `true`   |
+| `showBorder` | `boolean`                                     | `true`   |

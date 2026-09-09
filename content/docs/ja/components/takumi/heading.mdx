@@ -1,0 +1,122 @@
+---
+title: "見出し"
+description: "タイポグラフィスケールを持つドキュメント見出し。"
+---
+
+<ComponentPreview base="takumi" name="heading" hideCode />
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/heading
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>次の依存関係をインストールします：</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>次のコードをプロジェクトにコピー＆ペーストします。</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/heading/heading.tsx"
+  base="takumi"
+  title="components/pdf/heading/heading.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>インポートパスをプロジェクトの構成に合わせて更新してください。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import { Heading } from "@/components/pdf/heading";
+```
+
+```tsx
+<Heading level={1}>Heading</Heading>
+```
+
+## API リファレンス
+
+### Heading
+
+| プロパティ     | 型                                                      | デフォルト |
+| -------------- | ------------------------------------------------------- | ---------- |
+| `level`        | `1 \| 2 \| 3 \| 4 \| 5 \| 6`                            | `1`        |
+| `align`        | `'left' \| 'center' \| 'right'`                         | `'left'`   |
+| `color`        | `string`                                                | -          |
+| `transform`    | `'uppercase' \| 'lowercase' \| 'capitalize'`            | -          |
+| `weight`       | `'normal' \| 'medium' \| 'semibold' \| 'bold'`          | `'bold'`   |
+| `tracking`     | `'tighter' \| 'tight' \| 'normal' \| 'wide' \| 'wider'` | `'normal'` |
+| `noMargin`     | `boolean`                                               | `false`    |
+| `keepWithNext` | `boolean`                                               | -          |

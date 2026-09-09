@@ -1,0 +1,129 @@
+---
+title: "页脚"
+description: "重复出现的页脚。"
+---
+
+<ComponentPreview base="takumi" name="page-footer" hideCode />
+
+## 安装
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">命令</TabsTrigger>
+  <TabsTrigger value="manual">手动</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/page-footer
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>安装以下依赖项：</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>将以下代码复制并粘贴到你的项目中。</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/page-footer/page-footer.tsx"
+  base="takumi"
+  title="components/pdf/page-footer/page-footer.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>更新导入路径以匹配你的项目设置。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 用法
+
+```tsx
+import { PageFooter } from "@/components/pdf/page-footer";
+```
+
+```tsx
+<PageFooter leftText="pdfcn" rightText="Confidential" />
+```
+
+## API 参考
+
+### PageFooter
+
+| 属性          | 类型                                                                               | 默认值     |
+| ------------- | ---------------------------------------------------------------------------------- | ---------- |
+| `leftText`    | `string`                                                                           | -          |
+| `rightText`   | `string`                                                                           | -          |
+| `centerText`  | `string`                                                                           | -          |
+| `variant`     | `'simple' \| 'centered' \| 'branded' \| 'minimal' \| 'three-column' \| 'detailed'` | `'simple'` |
+| `background`  | `string`                                                                           | -          |
+| `textColor`   | `string`                                                                           | -          |
+| `marginTop`   | `number`                                                                           | -          |
+| `address`     | `string`                                                                           | -          |
+| `phone`       | `string`                                                                           | -          |
+| `email`       | `string`                                                                           | -          |
+| `website`     | `string`                                                                           | -          |
+| `fixed`       | `boolean`                                                                          | `false`    |
+| `sticky`      | `boolean`                                                                          | `false`    |
+| `pagePadding` | `number`                                                                           | `0`        |
+| `noWrap`      | `boolean`                                                                          | `true`     |

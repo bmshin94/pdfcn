@@ -93,7 +93,6 @@ For most use cases,
 **Review mode options:**
 
 - **`--mode [mode]`**: How the review runs. Defaults to `apply`.
-
   - `apply`: translate the diverging blocks with AI and write the files.
   - `report`: do not call any AI; log the blocks that need attention (with line numbers and content) for the base and target locales, to help another agent generate the translations.
   - `synthesis`: do not call any AI and skip the per-block output; only log the final recap of the documents that are up to date and the ones that have blocks to edit.

@@ -1,0 +1,108 @@
+---
+title: "まとめて保持"
+description: "子要素を同じ PDF ページ内に保持します。"
+---
+
+<ComponentPreview base="forme" name="keep-together" hideCode />
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/keep-together
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>以下の依存関係をインストールします：</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>以下のコードをプロジェクトにコピー＆ペーストします。</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/keep-together/keep-together.tsx"
+  base="forme"
+  title="components/pdf/keep-together/keep-together.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>プロジェクトの構成に合わせてインポートパスを更新します。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import { KeepTogether } from "@/components/pdf/keep-together";
+import { Text } from "@/components/pdf/text";
+```
+
+```tsx
+<KeepTogether>
+  <Text>Keep these lines together.</Text>
+</KeepTogether>
+```
+
+## API リファレンス
+
+### KeepTogether
+
+| プロパティ         | 型          | デフォルト |
+| ------------------ | ----------- | ---------- |
+| `children`         | `ReactNode` | -          |
+| `minPresenceAhead` | `number`    | -          |
+| `style`            | `Style`     | -          |

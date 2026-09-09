@@ -46,7 +46,7 @@ const carEnumeration = {
       "1": "One car",
       ">5": "Some cars",
       ">19": "Many cars",
-      "fallback": "Fallback value", // Optional
+      fallback: "Fallback value", // Optional
     }),
   },
 } satisfies Dictionary;

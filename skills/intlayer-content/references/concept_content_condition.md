@@ -52,15 +52,15 @@ export default myConditionalContent;
 
 ```json5 fileName="**/*.content.json" contentDeclarationFormat="json"
 {
-  "$schema": "https://intlayer.org/schema.json",
-  "key": "my_key",
-  "content": {
-    "myCondition": {
-      "nodeType": "condition",
-      "condition": {
-        "true": "my content when it's true",
-        "false": "my content when it's false",
-        "fallback": "my content when the condition fails", // Optional
+  $schema: "https://intlayer.org/schema.json",
+  key: "my_key",
+  content: {
+    myCondition: {
+      nodeType: "condition",
+      condition: {
+        true: "my content when it's true",
+        false: "my content when it's false",
+        fallback: "my content when the condition fails", // Optional
       },
     },
   },

@@ -10,11 +10,6 @@
     "allowImportingTsExtensions": true,
     "strictNullChecks": true
   },
-  "include": [
-    "scripts/**/*.{ts,mts}",
-    "./.intlayer/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["scripts/**/*.{ts,mts}", "./.intlayer/**/*.ts"],
+  "exclude": ["node_modules"]
 }

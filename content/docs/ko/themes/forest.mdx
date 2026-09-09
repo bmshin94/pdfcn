@@ -1,0 +1,59 @@
+---
+title: "포레스트"
+description: "자연스러운 짙은 녹색과 Merriweather 제목 서체로 자연스럽고 신뢰감 있는 느낌을 줍니다."
+---
+
+import { forestTheme } from "@/registry/themes";
+
+<ComponentPreview
+  base="forme"
+  name="invoice-classic"
+  theme={forestTheme}
+  hideCode
+/>
+
+## 설치
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">명령어</TabsTrigger>
+  <TabsTrigger value="manual">수동</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/theme-forest
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>다음 코드를 프로젝트에 복사하여 붙여넣으세요.</Step>
+
+<ComponentSource src="registry/themes/forest.ts" title="lib/themes/forest.ts" />
+
+<Step>프로젝트 설정에 맞게 임포트 경로를 업데이트하세요.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 사용법
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { forestTheme } from "@/lib/pdf-themes/forest";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={forestTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```

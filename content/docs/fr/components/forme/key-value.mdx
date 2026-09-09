@@ -1,0 +1,116 @@
+---
+title: "Clé-Valeur"
+description: "Liste de définitions de clés et de valeurs."
+---
+
+<ComponentPreview base="forme" name="key-value" hideCode />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Commande</TabsTrigger>
+  <TabsTrigger value="manual">Manuel</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/key-value
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Installez les dépendances suivantes :</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>Copiez-collez le code suivant dans votre projet.</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/key-value/key-value.tsx"
+  base="forme"
+  title="components/pdf/key-value/key-value.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Mettez à jour les chemins d'import selon la configuration de votre projet.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Utilisation
+
+```tsx
+import { KeyValue } from "@/components/pdf/key-value";
+```
+
+```tsx
+<KeyValue items={[{ key: "Name", value: "Ada" }]} />
+```
+
+## Référence de l'API
+
+### KeyValue
+
+| Propriété          | Type                         | Par défaut   |
+| ------------------ | ---------------------------- | ------------ |
+| `items`            | `KeyValueEntry[]`            | -            |
+| `direction`        | `'horizontal' \| 'vertical'` | 'horizontal' |
+| `divided`          | `boolean`                    | false        |
+| `size`             | `'sm' \| 'md' \| 'lg'`       | 'md'         |
+| `labelFlex`        | `number`                     | 1            |
+| `labelColor`       | `string`                     | -            |
+| `valueColor`       | `string`                     | -            |
+| `boldValue`        | `boolean`                    | false        |
+| `noWrap`           | `boolean`                    | false        |
+| `dividerColor`     | `string`                     | -            |
+| `dividerThickness` | `number`                     | -            |
+| `dividerMargin`    | `number`                     | -            |

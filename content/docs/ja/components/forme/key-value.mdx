@@ -1,0 +1,114 @@
+---
+title: "キーバリュー"
+description: "キーと値のペアを表示する定義リスト。"
+---
+
+<ComponentPreview base="forme" name="key-value" hideCode />
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/key-value
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>次の依存関係をインストールします:</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>次のコードをプロジェクトにコピー＆ペーストします。</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/key-value/key-value.tsx"
+  base="forme"
+  title="components/pdf/key-value/key-value.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>プロジェクトの構成に合わせてインポートパスを更新します。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import { KeyValue } from "@/components/pdf/key-value";
+```
+
+```tsx
+<KeyValue items={[{ key: "Name", value: "Ada" }]} />
+```
+
+## APIリファレンス
+
+### KeyValue
+
+| プロパティ         | 型                           | デフォルト   |
+| ------------------ | ---------------------------- | ------------ |
+| `items`            | `KeyValueEntry[]`            | -            |
+| `direction`        | `'horizontal' \| 'vertical'` | 'horizontal' |
+| `divided`          | `boolean`                    | false        |
+| `size`             | `'sm' \| 'md' \| 'lg'`       | 'md'         |
+| `labelFlex`        | `number`                     | 1            |
+| `labelColor`       | `string`                     | -            |
+| `valueColor`       | `string`                     | -            |
+| `boldValue`        | `boolean`                    | false        |
+| `noWrap`           | `boolean`                    | false        |
+| `dividerColor`     | `string`                     | -            |
+| `dividerThickness` | `number`                     | -            |
+| `dividerMargin`    | `number`                     | -            |

@@ -1,0 +1,71 @@
+---
+title: レジストリ
+description: pdfcn レジストリを shadcn CLI で使用する方法を学びます。
+---
+
+**pdfcn** レジストリは [shadcn レジストリ形式](https://ui.shadcn.com/docs/registry) で Takumi と Forme のコンポーネント、ブロック、テーマを提供します。`components.json` で名前空間を一度登録し、CLI で名前を指定して項目を取得します。
+
+## セットアップ
+
+このサイトの **registries** エントリを追加します。`components.json` のすべてのフィールドと動作については、[shadcn レジストリドキュメント](https://ui.shadcn.com/docs/registry) を参照してください。
+
+```json
+{
+  "registries": {
+    "@pdfcn": "https://pdfcn.dev/r/{name}.json"
+  }
+}
+```
+
+`@pdfcn` を別の名前空間に置き換えることができます。`shadcn add` に渡すものと一致する必要があります。
+
+## 使用方法
+
+項目はベースごとに名前空間が付けられます：Takumi は `takumi/`、Forme は `forme/`。
+
+レジストリファイルは以下の宛先に従います：
+
+- コンポーネントは `components/ui/` にインストールされます。
+- ブロックは設定されたブロックディレクトリにインストールされます。
+
+コンポーネントは依存関係を宣言しているため、コンポーネントのインストールには追加のセットアップは不要です。
+
+### Takumi
+
+コンポーネントをインストール：
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/text
+```
+
+ブロックをインストール：
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/invoice-minimal
+```
+
+レジストリアリエイスを使用しない場合、完全な URL を使用します（各ドキュメントページに記載）：
+
+```bash
+npx shadcn@latest add https://pdfcn.dev/r/takumi/text.json
+```
+
+### Forme
+
+コンポーネントをインストール：
+
+```bash
+npx shadcn@latest add @pdfcn/forme/text
+```
+
+ブロックをインストール：
+
+```bash
+npx shadcn@latest add @pdfcn/forme/invoice-minimal
+```
+
+レジストリアリエイスを使用しない場合、完全な URL を使用します（各ドキュメントページに記載）：
+
+```bash
+npx shadcn@latest add https://pdfcn.dev/r/forme/text.json
+```

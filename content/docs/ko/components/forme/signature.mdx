@@ -1,0 +1,109 @@
+---
+title: "서명"
+description: "이름과 레이블이 있는 서명 블록입니다."
+---
+
+<ComponentPreview base="forme" name="signature" hideCode />
+
+## 설치
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">명령어</TabsTrigger>
+  <TabsTrigger value="manual">수동</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/signature
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>다음 종속성을 설치하세요:</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>다음 코드를 복사하여 프로젝트에 붙여넣으세요.</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/signature/signature.tsx"
+  base="forme"
+  title="components/pdf/signature/signature.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>프로젝트 설정에 맞게 임포트 경로를 업데이트하세요.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 사용법
+
+```tsx
+import { PdfSignatureBlock } from "@/components/pdf/signature";
+```
+
+```tsx
+<PdfSignatureBlock name="Jane Doe" label="Authorized Signature" />
+```
+
+## API 참조
+
+### PdfSignatureBlock
+
+| 속성      | 타입                                 | 기본값   |
+| --------- | ------------------------------------ | -------- |
+| `variant` | `'single' \| 'double' \| 'inline'`   | 'single' |
+| `label`   | `string`                             | -        |
+| `name`    | `string`                             | -        |
+| `title`   | `string`                             | -        |
+| `date`    | `string`                             | -        |
+| `signers` | `[SignatureSigner, SignatureSigner]` | -        |
+| `style`   | `Style`                              | -        |

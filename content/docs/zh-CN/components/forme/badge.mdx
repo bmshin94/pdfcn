@@ -1,0 +1,108 @@
+---
+title: "Badge"
+description: "用于标签和标记的紧凑状态徽章。"
+---
+
+<ComponentPreview base="forme" name="badge" hideCode />
+
+## 安装
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/badge
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>安装以下依赖项：</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>将以下代码复制并粘贴到您的项目中。</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/badge/badge.tsx"
+  base="forme"
+  title="components/pdf/badge/badge.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>更新导入路径以匹配您的项目设置。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使用方法
+
+```tsx
+import { Badge } from "@/components/pdf/badge";
+```
+
+```tsx
+<Badge>Badge</Badge>
+```
+
+## API 参考
+
+### Badge
+
+| 属性         | 类型                                                                                       | 默认值    |
+| ------------ | ------------------------------------------------------------------------------------------ | --------- |
+| `label`      | `string`                                                                                   | -         |
+| `children`   | `string`                                                                                   | -         |
+| `variant`    | `'default' \| 'primary' \| 'success' \| 'warning' \| 'destructive' \| 'info' \| 'outline'` | 'default' |
+| `size`       | `'sm' \| 'md' \| 'lg'`                                                                     | 'md'      |
+| `background` | `string`                                                                                   | -         |
+| `color`      | `string`                                                                                   | -         |

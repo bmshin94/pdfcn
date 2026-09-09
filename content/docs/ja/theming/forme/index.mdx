@@ -1,0 +1,153 @@
+---
+title: テーマ設定
+description: Forme 用の PDF テーマ、カラー、タイポグラフィ、スペーシングを設定します。
+---
+
+import { ThemePreview } from "@/components/theme-preview";
+import { ThemePreviewGrid } from "@/components/theme-preview-grid";
+
+<ThemePreview base="forme" />
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/theme-provider
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>以下のコードをプロジェクトにコピーして貼り付けてください。</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<Step>プロジェクトの構成に合わせてインポートパスを更新してください。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { professionalTheme } from "@/lib/pdf-themes/professional";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={professionalTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```
+
+## カラートークン
+
+すべてのカラー値は 16 進数文字列である必要があります（例：`#1a1a1a`）。React PDF は hex、`rgb()`、`hsl()` をサポートしていますが、`oklch` はサポートしていません。
+
+| トークン            | 用途                       |
+| ------------------- | -------------------------- |
+| `foreground`        | プライマリテキストの色     |
+| `background`        | ページの背景               |
+| `muted`             | セカンダリの背景           |
+| `mutedForeground`   | キャプション、脚注         |
+| `primary`           | ブランド/アクセントカラー  |
+| `primaryForeground` | プライマリ背景上のテキスト |
+| `border`            | テーブルの罫線、区切り線   |
+| `accent`            | CTA（行動喚起）要素        |
+| `destructive`       | エラー状態                 |
+| `success`           | 成功状態                   |
+| `warning`           | 警告状態                   |
+| `info`              | 情報状態                   |
+
+## プリミティブトークン
+
+プリミティブは、テーマで利用できる生の設計スケールを定義します：
+
+- **タイポグラフィスケール** — 12pt を基準とした Major Third（1.25）比率
+- **スペーシングスケール** — 4pt グリッドシステム
+- **フォントウェイト** — 400〜700
+- **行の高さ** — 1.2〜1.6
+- **角丸（ボーダー半径）** — 0〜8pt
+
+## カスタムテーマ
+
+`PdfcnTheme` インターフェースを使用して、テーマの完全な形状を保ったままカスタムテーマを作成します。
+
+```tsx
+import type { PdfcnTheme } from "@/registry/themes";
+import { defaultPrimitives } from "@/registry/themes";
+
+export const oceanTheme: PdfcnTheme = {
+  name: "ocean",
+  primitives: defaultPrimitives,
+  colors: {
+    foreground: "#0f172a",
+    background: "#ffffff",
+    primary: "#0369a1",
+    accent: "#0ea5e9",
+    muted: "#f1f5f9",
+    border: "#e2e8f0",
+    mutedForeground: "#64748b",
+    primaryForeground: "#ffffff",
+    destructive: "#dc2626",
+    success: "#16a34a",
+    warning: "#d97706",
+    info: "#0ea5e9",
+  },
+  typography: {
+    body: { fontFamily: "Helvetica", fontSize: 11, lineHeight: 1.6 },
+    heading: {
+      fontFamily: "Times-Roman",
+      fontWeight: 700,
+      lineHeight: 1.25,
+      fontSize: { h1: 32, h2: 24, h3: 20, h4: 16, h5: 14, h6: 12 },
+    },
+  },
+  spacing: {
+    page: { marginTop: 56, marginRight: 48, marginBottom: 56, marginLeft: 48 },
+    sectionGap: 28,
+    paragraphGap: 10,
+    componentGap: 14,
+  },
+  page: { size: "A4", orientation: "portrait" },
+};
+```
+
+## 利用可能なテーマ
+
+<ThemePreviewGrid />

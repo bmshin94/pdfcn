@@ -163,29 +163,29 @@ export default {
 
 ```json5 fileName="src/example.content.json"  contentDeclarationFormat="json"
 {
-  "$schema": "https://intlayer.org/schema.json",
-  "key": "page",
-  "content": {
-    "imbricatedContent": {
-      "imbricatedContent2": {
-        "stringContent": "Hello World",
-        "numberContent": 123,
-        "booleanContent": true,
+  $schema: "https://intlayer.org/schema.json",
+  key: "page",
+  content: {
+    imbricatedContent: {
+      imbricatedContent2: {
+        stringContent: "Hello World",
+        numberContent: 123,
+        booleanContent: true,
       },
-      "imbricatedArray": [1, 2, 3],
+      imbricatedArray: [1, 2, 3],
     },
-    "multilingualContent": {
-      "nodeType": "translation",
-      "translation": {
-        "en": "English content",
+    multilingualContent: {
+      nodeType: "translation",
+      translation: {
+        en: "English content",
         "en-GB": "English content (UK)",
-        "fr": "French content",
-        "es": "Spanish content",
+        fr: "French content",
+        es: "Spanish content",
       },
     },
-    "quantityContent": {
-      "nodeType": "enumeration",
-      "enumeration": {
+    quantityContent: {
+      nodeType: "enumeration",
+      enumeration: {
         "0": "No cars",
         "1": "One car",
         "<-1": "Less than minus one car",
@@ -194,46 +194,46 @@ export default {
         ">19": "Many cars",
       },
     },
-    "pluralContent": {
-      "nodeType": "plural",
-      "plural": {
-        "one": "One car",
-        "other": "{{count}} cars",
+    pluralContent: {
+      nodeType: "plural",
+      plural: {
+        one: "One car",
+        other: "{{count}} cars",
       },
     },
-    "conditionalContent": {
-      "nodeType": "condition",
-      "condition": {
-        "true": "Validation is enabled",
-        "false": "Validation is disabled",
+    conditionalContent: {
+      nodeType: "condition",
+      condition: {
+        true: "Validation is enabled",
+        false: "Validation is disabled",
       },
     },
-    "insertionContent": {
-      "nodeType": "insertion",
-      "insertion": "Hello {{name}}!",
+    insertionContent: {
+      nodeType: "insertion",
+      insertion: "Hello {{name}}!",
     },
-    "nestedContent": {
-      "nodeType": "nested",
-      "nested": { "dictionaryKey": "app" },
+    nestedContent: {
+      nodeType: "nested",
+      nested: { dictionaryKey: "app" },
     },
-    "markdownContent": {
-      "nodeType": "markdown",
-      "markdown": "# Markdown Example",
+    markdownContent: {
+      nodeType: "markdown",
+      markdown: "# Markdown Example",
     },
-    "htmlContent": {
-      "nodeType": "html",
-      "html": "<p>Hello <strong>World</strong></p>",
+    htmlContent: {
+      nodeType: "html",
+      html: "<p>Hello <strong>World</strong></p>",
     },
-    "fileContent": {
-      "nodeType": "file",
-      "file": "./path/to/file.txt",
+    fileContent: {
+      nodeType: "file",
+      file: "./path/to/file.txt",
     },
-    "jsxContent": {
-      "type": "h1",
-      "key": null,
-      "ref": null,
-      "props": {
-        "children": ["My title"],
+    jsxContent: {
+      type: "h1",
+      key: null,
+      ref: null,
+      props: {
+        children: ["My title"],
       },
     },
   },
@@ -1051,62 +1051,62 @@ export default {
 
 ```json5 fileName="src/example.content.json"  contentDeclarationFormat="json"
 {
-  "$schema": "https://intlayer.org/schema.json",
-  "key": "page",
-  "content": {
-    "hiMessage": {
-      "nodeType": "composite",
-      "composite": [
+  $schema: "https://intlayer.org/schema.json",
+  key: "page",
+  content: {
+    hiMessage: {
+      nodeType: "composite",
+      composite: [
         {
-          "nodeType": "translation",
-          "translation": {
-            "en": "Hi",
-            "fr": "Salut",
-            "es": "Hola",
+          nodeType: "translation",
+          translation: {
+            en: "Hi",
+            fr: "Salut",
+            es: "Hola",
           },
         },
         " ",
         "John Doe",
       ],
     },
-    "advancedContent": {
-      "nodeType": "condition",
-      "condition": {
-        "true": {
-          "nodeType": "enumeration",
-          "enumeration": {
+    advancedContent: {
+      nodeType: "condition",
+      condition: {
+        true: {
+          nodeType: "enumeration",
+          enumeration: {
             "0": {
-              "nodeType": "translation",
-              "translation": {
-                "en": "No items found",
-                "fr": "Aucun article trouvé",
-                "es": "No se encontraron artículos",
+              nodeType: "translation",
+              translation: {
+                en: "No items found",
+                fr: "Aucun article trouvé",
+                es: "No se encontraron artículos",
               },
             },
             "1": {
-              "nodeType": "translation",
-              "translation": {
-                "en": "One item found",
-                "fr": "Un article trouvé",
-                "es": "Se encontró un artículo",
+              nodeType: "translation",
+              translation: {
+                en: "One item found",
+                fr: "Un article trouvé",
+                es: "Se encontró un artículo",
               },
             },
             ">1": {
-              "nodeType": "translation",
-              "translation": {
-                "en": "Multiple items found",
-                "fr": "Plusieurs articles trouvés",
-                "es": "Se encontraron múltiples artículos",
+              nodeType: "translation",
+              translation: {
+                en: "Multiple items found",
+                fr: "Plusieurs articles trouvés",
+                es: "Se encontraron múltiples artículos",
               },
             },
           },
         },
-        "false": {
-          "nodeType": "translation",
-          "translation": {
-            "en": "No valid data available",
-            "fr": "Aucune donnée valide disponible",
-            "es": "No hay datos válidos disponibles",
+        false: {
+          nodeType: "translation",
+          translation: {
+            en: "No valid data available",
+            fr: "Aucune donnée valide disponible",
+            es: "No hay datos válidos disponibles",
           },
         },
       },

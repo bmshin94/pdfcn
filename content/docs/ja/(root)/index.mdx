@@ -1,0 +1,64 @@
+---
+title: "はじめに"
+description: "React 向けのコピー&ペースト PDF コンポーネント。Takumi と Forme 上に構築され、shadcn CLI で動作します。"
+---
+
+**pdfcn** は、美しくデザインされ、アクセシブルでカスタマイズ可能な PDF コンポーネントを提供します。[Takumi](https://takumi.kane.tw/docs/pdf) と [Forme](https://docs.formepdf.com) 上に構築され、[shadcn CLI](https://ui.shadcn.com) とシームレスに連携するよう設計されています。
+
+## 設計思想
+
+pdfcn は、ドキュメント生成における shadcn のモデルに従います。所有できるコピー&ペーストのコンポーネントであり、ロックインはゼロで、すぐに使える適切なデフォルトを備えています。
+
+PDF レイアウトは、レンダラー固有のプリミティブで組み立てられ、スタイルが重複し、ページ分割ロジックが脆弱な、使い捨てのテンプレートとして扱われることが多くあります。pdfcn は異なるアプローチを取ります。各レンダラーのプリミティブに寄り添いながら、Takumi と Forme の間で API を統一し、より細かい制御が必要な場合はいつでも基盤となるレンダラーに直接アクセスできます。
+
+目標はシンプルです。生成される PDF を、あなたのスタックの他の部分と同じように感じられるものにすること——コンポーザブルで、テーマ対応で、アクセシブルで、カスタマイズしやすいものにすることです。
+
+## なぜ pdfcn なのか？
+
+ほとんどの PDF コンポーネントのセットアップは、独自の主張が強すぎるか、逆にまとまりがなさすぎます。pdfcn は、制御を犠牲にせずに素早くリリースしたいチームのために作られています。
+
+- **コードを所有する：** コンポーネントをプロジェクトにコピーして、すべてをカスタマイズできます。
+- **すぐに始められる：** 1 つのコマンドを実行するだけで、プロダクション対応のデフォルト設定で最初のドキュメントをレンダリングできます。
+- **エンジンを選べる：** Takumi でも Forme でも同じコンポーネント API を使用し、必要に応じて生のレンダラー API に降りることができます。
+
+## 特徴
+
+<div className="not-prose grid gap-4 sm:grid-cols-2 mt-4">
+  <FeatureCard
+    icon={ZapIcon}
+    title="ゼロコンフィグ"
+    description="適切なデフォルト設定とレンダラーを意識したインストールで、すぐに使い始められます。"
+  />
+  <FeatureCard
+    icon={SunMoonIcon}
+    title="テーマ対応"
+    description="コンポーネント、ブロック、両方のレンダリングベース間で一貫した PDF テーマを共有します。"
+  />
+  <FeatureCard
+    icon={LayoutGridIcon}
+    title="コンポーザブル"
+    description="小さな宣言的コンポーネントから請求書、レポート、フォーム、テーブルを構築します。"
+  />
+  <FeatureCard
+    icon={Code2Icon}
+    title="TypeScript"
+    description="Takumi と Forme で一致する公開 props を持つ、完全な型安全性。"
+  />
+  <FeatureCard
+    icon={ClipboardCopyIcon}
+    title="コピー & ペースト"
+    description="PDF コードを所有できます。プロジェクトにインストールして、すべての詳細をカスタマイズしましょう。"
+  />
+  <FeatureCard
+    icon={BlocksIcon}
+    title="shadcn 互換"
+    description="shadcn のレジストリ形式を使用——1 つのコマンドでコンポーネントとブロックを追加できます。"
+  />
+</div>
+
+import { ZapIcon } from "lucide-react";
+import { SunMoonIcon } from "lucide-react";
+import { LayoutGridIcon } from "lucide-react";
+import { Code2Icon } from "lucide-react";
+import { ClipboardCopyIcon } from "lucide-react";
+import { BlocksIcon } from "lucide-react";

@@ -1,5 +1,6 @@
 "use client";
 
+import { useIntlayer } from "next-intlayer";
 import Link from "next/link";
 import { useCallback, useRef } from "react";
 
@@ -9,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { ROUTES } from "@/constants/routes";
 
 export const SponsorLink = () => {
+  const content = useIntlayer("sponsor-link");
   const heartRef = useRef<HeartHandshakeIconHandle>(null);
 
   const handleMouseEnter = useCallback(() => {
@@ -31,7 +33,7 @@ export const SponsorLink = () => {
     >
       <Link href={ROUTES.SPONSOR}>
         <HeartHandshakeIcon className="text-pink-500" ref={heartRef} />
-        <span className="max-sm:sr-only">Sponsor</span>
+        <span className="max-sm:sr-only">{content.sponsor}</span>
       </Link>
     </Button>
   );

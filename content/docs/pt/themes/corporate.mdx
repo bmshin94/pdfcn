@@ -1,0 +1,65 @@
+---
+title: "Corporativo"
+description: "Paleta azul-acinzentada, fonte sem serifa Lato, estruturada e confiável."
+---
+
+import { corporateTheme } from "@/registry/themes";
+
+<ComponentPreview
+  base="forme"
+  name="invoice-corporate"
+  theme={corporateTheme}
+  hideCode
+/>
+
+## Instalação
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Comando</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/theme-corporate
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copie e cole o seguinte código no seu projeto.</Step>
+
+<ComponentSource
+  src="registry/themes/corporate.ts"
+  title="lib/themes/corporate.ts"
+/>
+
+<Step>
+  Atualize os caminhos de importação para corresponder à configuração do seu
+  projeto.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Uso
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { corporateTheme } from "@/lib/pdf-themes/corporate";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={corporateTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```

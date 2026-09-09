@@ -1,0 +1,111 @@
+---
+title: "Divider"
+description: "Règle horizontale pour séparer les sections."
+---
+
+<ComponentPreview base="forme" name="divider" hideCode />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/divider
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Installez les dépendances suivantes :</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>Copiez et collez le code suivant dans votre projet.</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/divider/divider.tsx"
+  base="forme"
+  title="components/pdf/divider/divider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Mettez à jour les chemins d'importation pour correspondre à la configuration
+  de votre projet.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Utilisation
+
+```tsx
+import { Divider } from "@/components/pdf/divider";
+```
+
+```tsx
+<Divider />
+```
+
+## Référence API
+
+### Divider
+
+| Prop        | Type                              | Défaut    |
+| ----------- | --------------------------------- | --------- |
+| `spacing`   | `'none' \| 'sm' \| 'md' \| 'lg'`  | `'md'`    |
+| `variant`   | `'solid' \| 'dashed' \| 'dotted'` | `'solid'` |
+| `color`     | `string`                          | -         |
+| `thickness` | `'thin' \| 'medium' \| 'thick'`   | `'thin'`  |
+| `label`     | `string`                          | -         |
+| `width`     | `string \| number`                | -         |

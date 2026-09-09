@@ -1,0 +1,131 @@
+---
+title: "En-tête de page"
+description: "En-tête répété sur chaque page."
+---
+
+<ComponentPreview base="takumi" name="page-header" hideCode />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Commande</TabsTrigger>
+  <TabsTrigger value="manual">Manuel</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/page-header
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Installez les dépendances suivantes :</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>Copiez-collez le code suivant dans votre projet.</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/page-header/page-header.tsx"
+  base="takumi"
+  title="components/pdf/page-header/page-header.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Mettez à jour les chemins d'importation pour qu'ils correspondent à la
+  configuration de votre projet.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Utilisation
+
+```tsx
+import { PageHeader } from "@/components/pdf/page-header";
+```
+
+```tsx
+<PageHeader title="Company" subtitle="Invoice" />
+```
+
+## Référence de l'API
+
+### PageHeader
+
+| Propriété      | Type                                                                                              | Par défaut |
+| -------------- | ------------------------------------------------------------------------------------------------- | ---------- |
+| `title`        | `string`                                                                                          | -          |
+| `subtitle`     | `string`                                                                                          | -          |
+| `rightText`    | `string`                                                                                          | -          |
+| `rightSubText` | `string`                                                                                          | -          |
+| `variant`      | `'simple' \| 'centered' \| 'minimal' \| 'branded' \| 'logo-left' \| 'logo-right' \| 'two-column'` | `'simple'` |
+| `background`   | `string`                                                                                          | -          |
+| `titleColor`   | `string`                                                                                          | -          |
+| `marginBottom` | `number`                                                                                          | -          |
+| `address`      | `string`                                                                                          | -          |
+| `phone`        | `string`                                                                                          | -          |
+| `email`        | `string`                                                                                          | -          |
+| `logo`         | `ReactNode`                                                                                       | -          |
+| `fixed`        | `boolean`                                                                                         | `false`    |
+| `noWrap`       | `boolean`                                                                                         | `true`     |

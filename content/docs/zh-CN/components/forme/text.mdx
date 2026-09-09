@@ -1,0 +1,110 @@
+---
+title: "文本"
+description: "带有排版变体的正文文本。"
+---
+
+<ComponentPreview base="forme" name="text" hideCode />
+
+## 安装
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">命令</TabsTrigger>
+  <TabsTrigger value="manual">手动</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/text
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>安装以下依赖项：</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>将以下代码复制并粘贴到你的项目中。</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/text/text.tsx"
+  base="forme"
+  title="components/pdf/text/text.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>更新导入路径以匹配你的项目结构。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 用法
+
+```tsx
+import { Text } from "@/components/pdf/text";
+```
+
+```tsx
+<Text>Hello from pdfcn</Text>
+```
+
+## API 参考
+
+### Text
+
+| 属性         | 类型                                                       | 默认值     |
+| ------------ | ---------------------------------------------------------- | ---------- |
+| `variant`    | `'xs' \| 'sm' \| 'base' \| 'lg' \| 'xl' \| '2xl' \| '3xl'` | `'base'`   |
+| `align`      | `'left' \| 'center' \| 'right' \| 'justify'`               | `'left'`   |
+| `color`      | `string`                                                   | -          |
+| `weight`     | `'normal' \| 'medium' \| 'semibold' \| 'bold'`             | `'normal'` |
+| `italic`     | `boolean`                                                  | `false`    |
+| `decoration` | `'underline' \| 'line-through' \| 'none'`                  | `'none'`   |
+| `transform`  | `'uppercase' \| 'lowercase' \| 'capitalize'`               | -          |
+| `noMargin`   | `boolean`                                                  | `false`    |

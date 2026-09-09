@@ -1,64 +1,46 @@
-import { type IntlayerConfig, Locales } from 'intlayer';
+import { Locales } from "intlayer";
+import type { IntlayerConfig } from "intlayer";
 
 /**
-* Intlayer configuration file documentation 
-* @see https://intlayer.org/doc/concept/configuration
-*/
+ * Intlayer configuration file documentation
+ * @see https://intlayer.org/doc/concept/configuration
+ */
 
 const config: IntlayerConfig = {
-  internationalization: {
-    locales: [Locales.ENGLISH],
-    /**
-     * Default locale used as a fallback if the requested locale is not found.
-     */
-    defaultLocale: Locales.ENGLISH,
-  },
-  routing: {
-    /**
-     * Locale routing strategy.
-     * - "prefix-no-default": Prefix all except the default locale (e.g., /dashboard, /fr/dashboard).
-     * - "prefix-all": Prefix all locales (e.g., /en/dashboard, /fr/dashboard).
-     * - "no-prefix": No locale in the URL.
-     * - "search-params": Use search params to define the locale (e.g., /dashboard/?locale=en, /dashboard/?locale=fr)
-     * Default: "prefix-no-default"
-     */
-    mode: "prefix-no-default",
-
-    /**
-     * Enables the Intlayer locale-routing proxy (middleware).
-     * Handles locale detection, redirects and rewrites in dev, preview and SSR.
-     * Leave unset for auto mode: dev and preview servers keep locale routing
-     * URL-driven by ignoring the stored locale. `true` forces the full
-     * behaviour everywhere, `false` disables the proxy.
-     * Default: undefined (auto)
-     */
-    enableProxy: false,
-  },
-  editor: {
-    /**
-     * Whether the visual editor is enabled.
-     */
-    enabled: false,
-
-    /**
-     * URL of your application for origin validation.
-     */
-    applicationURL: 'http://localhost:3000',
-  },
   ai: {
     /**
      * AI provider to use.
      * Options: 'openai', 'anthropic', 'mistral', 'deepseek', 'gemini', 'ollama', 'openrouter', 'alibaba', 'fireworks', 'groq', 'huggingface', 'bedrock', 'googlevertex', 'togetherai', 'lmstudio', 'moonshotai'
      */
-    provider: 'openai',
-    model: 'gpt-5-mini',
+    provider: "openai",
+    model: "gpt-5-mini",
     apiKey: process.env.OPENAI_API_KEY,
     /**
      * Additional context for the translations
-     * 
+     *
      * Can be use in addition of the dictionary `description` field
      */
-    applicationContext: [''].join('\n'),
+    applicationContext: [""].join("\n"),
+  },
+  build: {
+    /**
+     * (Experimental feature)
+     *
+     * Minify the dictionaries to reduce the bundle size.
+     */
+    minify: true,
+
+    /**
+     * (Experimental feature)
+     *
+     * Purge the unused keys in a dictionaries
+     */
+    purge: true,
+
+    /**
+     * Indicates if the build should check TypeScript types
+     */
+    checkTypes: false,
   },
   compiler: {
     enabled: false,
@@ -85,7 +67,7 @@ const config: IntlayerConfig = {
      *   output: ({ key, locale }) => `/locales/${locale}/${key}.content.json`,
      * }
      * ```
-     * 
+     *
      * Variable list:
      *   - `fileName`: The name of the file.
      *   - `key`: The key of the content.
@@ -115,28 +97,55 @@ const config: IntlayerConfig = {
      * - "dynamic": Dynamically imported using Suspense.
      * - "fetch": Fetched dynamically via the live sync API.
      */
-    importMode: 'static',
+    importMode: "static",
   },
-  build: {
+  editor: {
     /**
-     * (Experimental feature)
-     * 
-     * Minify the dictionaries to reduce the bundle size.
+     * Whether the visual editor is enabled.
      */
-    minify: true,
+    enabled: false,
 
     /**
-     * (Experimental feature)
-     * 
-     * Purge the unused keys in a dictionaries
+     * URL of your application for origin validation.
      */
-    purge: true,
+    applicationURL: "http://localhost:3000",
+  },
+  internationalization: {
+    locales: [
+      Locales.ENGLISH,
+      Locales.CHINESE_SIMPLIFIED_CHINA,
+      Locales.JAPANESE,
+      Locales.KOREAN,
+      Locales.SPANISH,
+      Locales.FRENCH,
+      Locales.PORTUGUESE,
+    ],
+    /**
+     * Default locale used as a fallback if the requested locale is not found.
+     */
+    defaultLocale: Locales.ENGLISH,
+  },
+  routing: {
+    /**
+     * Locale routing strategy.
+     * - "prefix-no-default": Prefix all except the default locale (e.g., /dashboard, /fr/dashboard).
+     * - "prefix-all": Prefix all locales (e.g., /en/dashboard, /fr/dashboard).
+     * - "no-prefix": No locale in the URL.
+     * - "search-params": Use search params to define the locale (e.g., /dashboard/?locale=en, /dashboard/?locale=fr)
+     * Default: "prefix-no-default"
+     */
+    mode: "prefix-no-default",
 
     /**
-     * Indicates if the build should check TypeScript types
+     * Enables the Intlayer locale-routing proxy (middleware).
+     * Handles locale detection, redirects and rewrites in dev, preview and SSR.
+     * Leave unset for auto mode: dev and preview servers keep locale routing
+     * URL-driven by ignoring the stored locale. `true` forces the full
+     * behaviour everywhere, `false` disables the proxy.
+     * Default: undefined (auto)
      */
-    checkTypes: false,
-  }
+    enableProxy: true,
+  },
 };
 
 export default config;

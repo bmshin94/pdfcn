@@ -1,0 +1,109 @@
+---
+title: "Alert"
+description: "アラートボックス。情報、成功、警告、エラーのバリアントをサポート。"
+---
+
+<ComponentPreview base="forme" name="alert" hideCode />
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/alert
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>以下の依存関係をインストールします：</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>以下のコードをコピーしてプロジェクトに貼り付けます。</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/alert/alert.tsx"
+  base="forme"
+  title="components/pdf/alert/alert.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>プロジェクトの設定に合わせてインポートパスを更新します。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import { PdfAlert } from "@/components/pdf/alert";
+```
+
+```tsx
+<PdfAlert variant="info" title="Info">
+  Alert body
+</PdfAlert>
+```
+
+## API リファレンス
+
+### PdfAlert
+
+| プロパティ   | 型                                            | デフォルト |
+| ------------ | --------------------------------------------- | ---------- |
+| `variant`    | `'info' \| 'success' \| 'warning' \| 'error'` | 'info'     |
+| `title`      | `string`                                      | -          |
+| `children`   | `ReactNode`                                   | -          |
+| `showIcon`   | `boolean`                                     | true       |
+| `showBorder` | `boolean`                                     | true       |

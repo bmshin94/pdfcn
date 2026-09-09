@@ -1,0 +1,111 @@
+---
+title: "水印"
+description: "对角线或居中的水印叠加层。"
+---
+
+<ComponentPreview base="forme" name="watermark" hideCode />
+
+## 安装
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">命令</TabsTrigger>
+  <TabsTrigger value="manual">手动</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/watermark
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>安装以下依赖项：</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>将以下代码复制并粘贴到你的项目中。</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/watermark/watermark.tsx"
+  base="forme"
+  title="components/pdf/watermark/watermark.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>更新导入路径以匹配你的项目结构。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 用法
+
+```tsx
+import { PdfWatermark } from "@/components/pdf/watermark";
+import { Text } from "@/components/pdf/text";
+```
+
+```tsx
+<PdfWatermark text="DRAFT" />
+```
+
+## API 参考
+
+### PdfWatermark
+
+| 属性       | 类型                                                                       | 默认值 |
+| ---------- | -------------------------------------------------------------------------- | ------ |
+| `text`     | `string`                                                                   | -      |
+| `opacity`  | `number`                                                                   | -      |
+| `fontSize` | `number`                                                                   | -      |
+| `color`    | `string`                                                                   | -      |
+| `angle`    | `number`                                                                   | -      |
+| `position` | `'center' \| 'top-left' \| 'top-right' \| 'bottom-left' \| 'bottom-right'` | -      |
+| `fixed`    | `boolean`                                                                  | true   |
+| `children` | `never`                                                                    | -      |

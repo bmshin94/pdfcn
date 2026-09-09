@@ -1,0 +1,153 @@
+---
+title: 테마
+description: Takumi용 PDF 테마, 색상, 타이포그래피 및 여백을 설정합니다.
+---
+
+import { ThemePreview } from "@/components/theme-preview";
+import { ThemePreviewGrid } from "@/components/theme-preview-grid";
+
+<ThemePreview base="takumi" />
+
+## 설치
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">명령어</TabsTrigger>
+  <TabsTrigger value="manual">수동</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/theme-provider
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>다음 코드를 프로젝트에 복사하여 붙여넣으세요.</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<Step>프로젝트 설정에 맞게 import 경로를 업데이트하세요.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 사용법
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { professionalTheme } from "@/lib/pdf-themes/professional";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={professionalTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```
+
+## 색상 토큰
+
+모든 색상 값은 16진수 문자열이어야 합니다(예: `#1a1a1a`). React PDF는 hex, `rgb()`, `hsl()`을 지원하지만 `oklch`는 지원하지 않습니다.
+
+| 토큰                | 용도                  |
+| ------------------- | --------------------- |
+| `foreground`        | 기본 텍스트 색상      |
+| `background`        | 페이지 배경           |
+| `muted`             | 보조 배경             |
+| `mutedForeground`   | 캡션, 각주            |
+| `primary`           | 브랜드/강조 색상      |
+| `primaryForeground` | 기본 배경 위의 텍스트 |
+| `border`            | 테이블 테두리, 구분선 |
+| `accent`            | CTA(행동 유도) 요소   |
+| `destructive`       | 오류 상태             |
+| `success`           | 성공 상태             |
+| `warning`           | 경고 상태             |
+| `info`              | 정보 상태             |
+
+## 프리미티브 토큰
+
+프리미티브는 테마에서 사용할 수 있는 원시 디자인 스케일을 정의합니다:
+
+- **타이포그래피 스케일** — 12pt 기준 Major Third(1.25) 비율
+- **간격 스케일** — 4pt 그리드 시스템
+- **글꼴 굵기** — 400–700
+- **줄 높이** — 1.2–1.6
+- **테두리 반경** — 0–8pt
+
+## 커스텀 테마
+
+`PdfcnTheme` 인터페이스를 사용하여 전체 테마 구조를 유지하면서 커스텀 테마를 만드세요.
+
+```tsx
+import type { PdfcnTheme } from "@/registry/themes";
+import { defaultPrimitives } from "@/registry/themes";
+
+export const oceanTheme: PdfcnTheme = {
+  name: "ocean",
+  primitives: defaultPrimitives,
+  colors: {
+    foreground: "#0f172a",
+    background: "#ffffff",
+    primary: "#0369a1",
+    accent: "#0ea5e9",
+    muted: "#f1f5f9",
+    border: "#e2e8f0",
+    mutedForeground: "#64748b",
+    primaryForeground: "#ffffff",
+    destructive: "#dc2626",
+    success: "#16a34a",
+    warning: "#d97706",
+    info: "#0ea5e9",
+  },
+  typography: {
+    body: { fontFamily: "Helvetica", fontSize: 11, lineHeight: 1.6 },
+    heading: {
+      fontFamily: "Times-Roman",
+      fontWeight: 700,
+      lineHeight: 1.25,
+      fontSize: { h1: 32, h2: 24, h3: 20, h4: 16, h5: 14, h6: 12 },
+    },
+  },
+  spacing: {
+    page: { marginTop: 56, marginRight: 48, marginBottom: 56, marginLeft: 48 },
+    sectionGap: 28,
+    paragraphGap: 10,
+    componentGap: 14,
+  },
+  page: { size: "A4", orientation: "portrait" },
+};
+```
+
+## 사용 가능한 테마
+
+<ThemePreviewGrid />

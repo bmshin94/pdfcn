@@ -1,0 +1,140 @@
+---
+title: "グラフ"
+description: "SVG で描画される棒グラフ・折れ線グラフ・エリアチャート。"
+---
+
+<ComponentPreview base="takumi" name="graph" hideCode />
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/graph
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>次の依存関係をインストールします：</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>次のコードをプロジェクトにコピー＆ペーストします。</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/graph/graph.tsx"
+  base="takumi"
+  title="components/pdf/graph/graph.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>インポートパスをプロジェクトの構成に合わせて更新してください。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import { PdfGraph } from "@/components/pdf/graph";
+```
+
+```tsx
+<PdfGraph variant="bar" data={[{ label: "Q1", value: 30 }]} />
+```
+
+### バリアント
+
+```tsx
+<PdfGraph variant="line" data={series} showDots smooth />
+<PdfGraph variant="donut" data={totals} centerLabel="$48k" />
+```
+
+## API リファレンス
+
+### PdfGraph
+
+| プロパティ    | 型                                                                  | デフォルト |
+| ------------- | ------------------------------------------------------------------- | ---------- |
+| `variant`     | `'bar' \| 'horizontal-bar' \| 'line' \| 'area' \| 'pie' \| 'donut'` | `'bar'`    |
+| `data`        | `GraphDataPoint[] \| GraphSeries[]`                                 | -          |
+| `title`       | `string`                                                            | -          |
+| `subtitle`    | `string`                                                            | -          |
+| `xLabel`      | `string`                                                            | -          |
+| `yLabel`      | `string`                                                            | -          |
+| `width`       | `number`                                                            | `420`      |
+| `height`      | `number`                                                            | `260`      |
+| `fullWidth`   | `boolean`                                                           | `false`    |
+| `colors`      | `string[]`                                                          | テーマ     |
+| `showValues`  | `boolean`                                                           | `false`    |
+| `showGrid`    | `boolean`                                                           | `true`     |
+| `legend`      | `'bottom' \| 'right' \| 'none'`                                     | `'bottom'` |
+| `centerLabel` | `string`                                                            | -          |
+| `showDots`    | `boolean`                                                           | `true`     |
+| `smooth`      | `boolean`                                                           | `false`    |
+| `yTicks`      | `number`                                                            | `5`        |
+| `noWrap`      | `boolean`                                                           | `true`     |
+| `style`       | `Style`                                                             | -          |

@@ -1,4 +1,6 @@
+import { getIntlayer } from "intlayer";
 import type { Metadata } from "next";
+import { getLocale } from "next-intlayer/server";
 import { notFound } from "next/navigation";
 
 import { ThemeBuilder } from "@/components/theme-builder/theme-builder";
@@ -7,13 +9,6 @@ import type { BaseName } from "@/registry/bases";
 import { createPageMetadata } from "@/seo/metadata";
 
 export const dynamicParams = false;
-
-const BASE_COPY: Record<BaseName, string> = {
-  forme:
-    "Design and export a reusable pdfcn theme with a live PDF preview powered by Forme.",
-  takumi:
-    "Design and export a reusable pdfcn theme with a live PDF preview powered by Takumi.",
-};
 
 interface ThemeBuilderBasePageProps {
   params: Promise<{ base: BaseName }>;
@@ -25,11 +20,16 @@ export const generateMetadata = async ({
   params,
 }: ThemeBuilderBasePageProps): Promise<Metadata> => {
   const { base } = await params;
+  const locale = await getLocale();
+  const content = getIntlayer("theme-builder-page", locale);
 
   return createPageMetadata({
-    description: BASE_COPY[base],
+    description:
+      base === "forme"
+        ? content.metadataDescriptionForme
+        : content.metadataDescriptionTakumi,
     path: `/theme-builder/${base}`,
-    title: "Theme Builder",
+    title: content.metadataTitle,
   });
 };
 

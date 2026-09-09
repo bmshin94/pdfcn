@@ -1,0 +1,127 @@
+---
+title: "Seção"
+description: "Wrapper de seção com título opcional."
+---
+
+<ComponentPreview base="takumi" name="section" hideCode />
+
+## Instalação
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Comando</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/section
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Instale as seguintes dependências:</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>Copie e cole o seguinte código no seu projeto.</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/section/section.tsx"
+  base="takumi"
+  title="components/pdf/section/section.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Atualize os caminhos de importação para corresponder à configuração do seu
+  projeto.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Uso
+
+```tsx
+import { Section } from "@/components/pdf/section";
+import { Text } from "@/components/pdf/text";
+```
+
+```tsx
+<Section>
+  <Text>Section body</Text>
+</Section>
+```
+
+## Referência da API
+
+### Section
+
+| Propriedade   | Tipo                                              | Padrão      |
+| ------------- | ------------------------------------------------- | ----------- |
+| `spacing`     | `'none' \| 'sm' \| 'md' \| 'lg' \| 'xl'`          | `'md'`      |
+| `padding`     | `'none' \| 'sm' \| 'md' \| 'lg'`                  | -           |
+| `background`  | `string`                                          | -           |
+| `border`      | `boolean`                                         | `false`     |
+| `variant`     | `'default' \| 'callout' \| 'highlight' \| 'card'` | `'default'` |
+| `accentColor` | `string`                                          | -           |
+| `noWrap`      | `boolean`                                         | `false`     |

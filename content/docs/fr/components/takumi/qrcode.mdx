@@ -1,0 +1,125 @@
+---
+title: "Code QR"
+description: "Code QR généré à partir d'une valeur de chaîne."
+---
+
+<ComponentPreview base="takumi" name="qrcode" hideCode />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Commande</TabsTrigger>
+  <TabsTrigger value="manual">Manuel</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/qrcode
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Installez les dépendances suivantes :</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>Copiez-collez le code suivant dans votre projet.</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/qrcode/qrcode.tsx"
+  base="takumi"
+  title="components/pdf/qrcode/qrcode.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Mettez à jour les chemins d'import pour qu'ils correspondent à la
+  configuration de votre projet.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Utilisation
+
+```tsx
+import { PdfQRCode } from "@/components/pdf/qrcode";
+```
+
+```tsx
+<PdfQRCode value="https://pdfcn.dev" />
+```
+
+## Référence de l'API
+
+### PdfQRCode
+
+| Propriété         | Type                       | Par défaut |
+| ----------------- | -------------------------- | ---------- |
+| `value`           | `string`                   | -          |
+| `size`            | `number`                   | -          |
+| `color`           | `string`                   | -          |
+| `backgroundColor` | `string`                   | -          |
+| `errorLevel`      | `'L' \| 'M' \| 'Q' \| 'H'` | -          |
+| `margin`          | `number`                   | -          |
+| `caption`         | `string`                   | -          |
+| `children`        | `never`                    | -          |

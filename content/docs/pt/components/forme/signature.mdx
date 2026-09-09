@@ -1,0 +1,112 @@
+---
+title: "Assinatura"
+description: "Bloco de assinatura com nome e rótulo."
+---
+
+<ComponentPreview base="forme" name="signature" hideCode />
+
+## Instalação
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Comando</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/signature
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Instale as seguintes dependências:</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>Copie e cole o código a seguir no seu projeto.</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/signature/signature.tsx"
+  base="forme"
+  title="components/pdf/signature/signature.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Atualize os caminhos de importação para corresponder à configuração do seu
+  projeto.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Uso
+
+```tsx
+import { PdfSignatureBlock } from "@/components/pdf/signature";
+```
+
+```tsx
+<PdfSignatureBlock name="Jane Doe" label="Authorized Signature" />
+```
+
+## Referência da API
+
+### PdfSignatureBlock
+
+| Prop      | Tipo                                 | Padrão   |
+| --------- | ------------------------------------ | -------- |
+| `variant` | `'single' \| 'double' \| 'inline'`   | 'single' |
+| `label`   | `string`                             | -        |
+| `name`    | `string`                             | -        |
+| `title`   | `string`                             | -        |
+| `date`    | `string`                             | -        |
+| `signers` | `[SignatureSigner, SignatureSigner]` | -        |
+| `style`   | `Style`                              | -        |

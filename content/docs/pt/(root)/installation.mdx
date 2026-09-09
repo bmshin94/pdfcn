@@ -1,0 +1,76 @@
+---
+title: Instalação
+description: Instale componentes PDF, blocos e temas do registro.
+---
+
+## Pré-requisitos
+
+Um projeto React que possa executar [Takumi](https://takumi.kane.tw/docs/pdf) ou [Forme](https://docs.formepdf.com).
+
+## Instalação
+
+Execute o seguinte comando para adicionar um componente Takumi:
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/text
+```
+
+Os componentes Forme usam o namespace `forme/`:
+
+```bash
+npx shadcn@latest add @pdfcn/forme/text
+```
+
+O registro instala as dependências do renderer correspondentes e as utilitários de tema compartilhados necessários pelo componente selecionado.
+
+## Uso
+
+Importe o componente instalado e use-o dentro dos primitivos de documento do seu renderer:
+
+```tsx
+import { Document, Page } from "@/components/pdf/pdf-primitives";
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { Text } from "@/components/pdf/text";
+
+export function Invoice() {
+  return (
+    <Document>
+      <Page size="A4">
+        <PdfcnThemeProvider>
+          <Text variant="xl">Invoice</Text>
+        </PdfcnThemeProvider>
+      </Page>
+    </Document>
+  );
+}
+```
+
+Para Forme, use `Document` e `Page` de `@formepdf/react`; a API do componente pdfcn instalado permanece a mesma.
+
+## Instalar um bloco
+
+Blocos são templates de documentos completos compostos a partir de componentes do registro:
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/invoice-minimal
+```
+
+Use o namespace `forme/` para o documento Forme equivalente:
+
+```bash
+npx shadcn@latest add @pdfcn/forme/invoice-minimal
+```
+
+## Instalar um tema
+
+pdfcn fornece presets de temas que se integram com `PdfcnThemeProvider`:
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/theme-minimal
+```
+
+Para Forme:
+
+```bash
+npx shadcn@latest add @pdfcn/theme-minimal
+```

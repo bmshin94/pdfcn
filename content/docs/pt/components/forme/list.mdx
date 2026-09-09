@@ -1,0 +1,117 @@
+---
+title: "Lista"
+description: "Listas ordenadas e não ordenadas."
+---
+
+<ComponentPreview base="forme" name="list" hideCode />
+
+## Instalação
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Comando</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/list
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Instale as seguintes dependências:</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>Copie e cole o código a seguir no seu projeto.</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/list/list.tsx"
+  base="forme"
+  title="components/pdf/list/list.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Atualize os caminhos de importação de acordo com a configuração do seu
+  projeto.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Uso
+
+```tsx
+import { PdfList } from "@/components/pdf/list";
+```
+
+```tsx
+<PdfList items={[{ text: "Alpha" }, { text: "Beta" }]} />
+```
+
+### Variantes
+
+```tsx
+<PdfList variant="numbered" items={items} />
+<PdfList variant="checklist" items={checklistItems} gap="md" />
+```
+
+## Referência da API
+
+### PdfList
+
+| Propriedade | Tipo                                                                                | Padrão     |
+| ----------- | ----------------------------------------------------------------------------------- | ---------- |
+| `items`     | `ListItem[]`                                                                        | -          |
+| `variant`   | `'bullet' \| 'numbered' \| 'checklist' \| 'icon' \| 'multi-level' \| 'descriptive'` | `'bullet'` |
+| `gap`       | `'xs' \| 'sm' \| 'md'`                                                              | `'sm'`     |
+| `noWrap`    | `boolean`                                                                           | `false`    |
+| `style`     | `Style`                                                                             | -          |

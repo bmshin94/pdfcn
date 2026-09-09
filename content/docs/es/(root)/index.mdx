@@ -1,0 +1,64 @@
+---
+title: "Introducción"
+description: "Componentes PDF para React que puedes copiar y pegar. Construidos sobre Takumi y Forme, funcionan con la CLI de shadcn."
+---
+
+**pdfcn** proporciona componentes PDF bellamente diseñados, accesibles y personalizables. Construido sobre [Takumi](https://takumi.kane.tw/docs/pdf) y [Forme](https://docs.formepdf.com), y diseñado para funcionar sin problemas con la [CLI de shadcn](https://ui.shadcn.com).
+
+## Filosofía
+
+pdfcn sigue el modelo de shadcn para la generación de documentos: componentes que puedes copiar y pegar y que te pertenecen por completo, sin ningún tipo de dependencia forzada (lock-in) y con valores predeterminados sensatos que funcionan de inmediato.
+
+Los diseños de PDF suelen tratarse como plantillas de un solo uso: ensamblados con primitivas específicas del renderizador, estilos duplicados y una lógica de salto de página frágil. pdfcn adopta un enfoque diferente. Se mantiene cerca de las primitivas de cada renderizador, conserva una API familiar entre Takumi y Forme, y te permite acceder al renderizador subyacente cuando necesitas más control.
+
+El objetivo es simple: hacer que los PDF generados se sientan como el resto de tu stack: componibles, personalizables mediante temas, accesibles y fáciles de personalizar.
+
+## ¿Por qué pdfcn?
+
+La mayoría de las configuraciones de componentes PDF son demasiado rígidas o demasiado dispersas. pdfcn está diseñado para equipos que quieren lanzar rápido sin renunciar al control:
+
+- **Sé dueño de tu código:** Copia los componentes en tu proyecto y personaliza todo.
+- **Empieza rápido:** Ejecuta un solo comando y renderiza tu primer documento con valores predeterminados listos para producción.
+- **Elige tu motor:** Usa la misma API de componentes con Takumi o Forme, y accede a las API nativas del renderizador cuando lo necesites.
+
+## Características
+
+<div className="not-prose grid gap-4 sm:grid-cols-2 mt-4">
+  <FeatureCard
+    icon={ZapIcon}
+    title="Configuración cero"
+    description="Funciona de inmediato con valores predeterminados sensatos e instalación consciente del renderizador."
+  />
+  <FeatureCard
+    icon={SunMoonIcon}
+    title="Consciente del tema"
+    description="Comparte un tema de PDF consistente entre componentes, bloques y ambas bases de renderizado."
+  />
+  <FeatureCard
+    icon={LayoutGridIcon}
+    title="Componible"
+    description="Construye facturas, informes, formularios y tablas a partir de pequeños componentes declarativos."
+  />
+  <FeatureCard
+    icon={Code2Icon}
+    title="TypeScript"
+    description="Seguridad de tipos completa, con props públicas coincidentes entre Takumi y Forme."
+  />
+  <FeatureCard
+    icon={ClipboardCopyIcon}
+    title="Copiar y pegar"
+    description="Sé dueño de tu código PDF. Instálalo en tu proyecto y personaliza cada detalle."
+  />
+  <FeatureCard
+    icon={BlocksIcon}
+    title="Compatible con shadcn"
+    description="Usa el formato de registro de shadcn: agrega componentes y bloques con un solo comando."
+  />
+</div>
+
+import { ZapIcon } from "lucide-react";
+import { SunMoonIcon } from "lucide-react";
+import { LayoutGridIcon } from "lucide-react";
+import { Code2Icon } from "lucide-react";
+import { ClipboardCopyIcon } from "lucide-react";
+import { BlocksIcon } from "lucide-react";

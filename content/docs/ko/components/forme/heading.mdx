@@ -1,0 +1,110 @@
+---
+title: "Heading"
+description: "타이포그래피 스케일이 있는 문서 제목."
+---
+
+<ComponentPreview base="forme" name="heading" hideCode />
+
+## 설치
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/heading
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>다음 의존성을 설치합니다:</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>다음 코드를 복사하여 프로젝트에 붙여넣습니다.</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/heading/heading.tsx"
+  base="forme"
+  title="components/pdf/heading/heading.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>프로젝트 설정에 맞게 가져오기 경로를 업데이트합니다.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 사용법
+
+```tsx
+import { Heading } from "@/components/pdf/heading";
+```
+
+```tsx
+<Heading level={1}>Heading</Heading>
+```
+
+## API 레퍼런스
+
+### Heading
+
+| 속성           | 타입                                                    | 기본값     |
+| -------------- | ------------------------------------------------------- | ---------- |
+| `level`        | `1 \| 2 \| 3 \| 4 \| 5 \| 6`                            | `1`        |
+| `align`        | `'left' \| 'center' \| 'right'`                         | `'left'`   |
+| `color`        | `string`                                                | -          |
+| `transform`    | `'uppercase' \| 'lowercase' \| 'capitalize'`            | -          |
+| `weight`       | `'normal' \| 'medium' \| 'semibold' \| 'bold'`          | `'bold'`   |
+| `tracking`     | `'tighter' \| 'tight' \| 'normal' \| 'wide' \| 'wider'` | `'normal'` |
+| `noMargin`     | `boolean`                                               | `false`    |
+| `keepWithNext` | `boolean`                                               | -          |

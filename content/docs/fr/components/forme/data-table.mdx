@@ -1,0 +1,137 @@
+---
+title: "Data Table"
+description: "Données tabulaires avec des colonnes et des lignes."
+---
+
+<ComponentPreview base="forme" name="data-table" hideCode />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Command</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/data-table
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Installez les dépendances suivantes :</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>Copiez et collez le code suivant dans votre projet.</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/data-table/data-table.tsx"
+  base="forme"
+  title="components/pdf/data-table/data-table.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Mettez à jour les chemins d'importation pour correspondre à la configuration
+  de votre projet.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Utilisation
+
+```tsx
+import { DataTable } from "@/components/pdf/data-table";
+```
+
+```tsx
+<DataTable
+  columns={[{ key: "name", header: "Name" }]}
+  data={[{ name: "Widget" }]}
+/>
+```
+
+### Variantes
+
+Utilisez n'importe quel `TableVariant` pour le traitement du tableau et `size="compact"` pour des rapports plus denses.
+
+```tsx
+<DataTable columns={columns} data={rows} variant="striped" size="compact" />
+```
+
+## Référence API
+
+### DataTable
+
+| Prop      | Type                                                                                        | Défaut      |
+| --------- | ------------------------------------------------------------------------------------------- | ----------- |
+| `columns` | `DataTableColumn<T>[]`                                                                      | -           |
+| `data`    | `T[]`                                                                                       | -           |
+| `variant` | `'line' \| 'grid' \| 'minimal' \| 'striped' \| 'compact' \| 'bordered' \| 'primary-header'` | `'grid'`    |
+| `footer`  | `Partial<Record<keyof T, string \| number>>`                                                | -           |
+| `stripe`  | `boolean`                                                                                   | `false`     |
+| `size`    | `'default' \| 'compact'`                                                                    | `'default'` |
+| `noWrap`  | `boolean`                                                                                   | `false`     |
+| `style`   | `Style`                                                                                     | -           |
+
+### DataTableColumn
+
+`key` est l'accesseur de champ de ligne—par exemple, `key: "name"` lit `row.name`. Ce n'est pas la prop réservée `key` de React.
+
+| Prop           | Type                            | Défaut   |
+| -------------- | ------------------------------- | -------- |
+| `key`          | `keyof T & string`              | -        |
+| `header`       | `string`                        | -        |
+| `align`        | `'left' \| 'center' \| 'right'` | `'left'` |
+| `width`        | `string \| number`              | -        |
+| `render`       | `(value, row) => ReactNode`     | -        |
+| `renderFooter` | `(value) => ReactNode`          | -        |

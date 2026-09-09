@@ -1,0 +1,62 @@
+---
+title: "ミニマル"
+description: "Courier体の見出しにジンク系のニュートラルカラー、余白を最大限に活かしたデザイン。"
+---
+
+import { minimalTheme } from "@/registry/themes";
+
+<ComponentPreview
+  base="forme"
+  name="invoice-minimal"
+  theme={minimalTheme}
+  hideCode
+/>
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/theme-minimal
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>次のコードをプロジェクトにコピーして貼り付けます。</Step>
+
+<ComponentSource
+  src="registry/themes/minimal.ts"
+  title="lib/themes/minimal.ts"
+/>
+
+<Step>プロジェクトの構成に合わせてインポートパスを更新してください。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { minimalTheme } from "@/lib/pdf-themes/minimal";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={minimalTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```

@@ -1,0 +1,65 @@
+---
+title: "Elegante"
+description: "Blancos cremosos cálidos, acento ámbar/dorado, una combinación editorial clásica."
+---
+
+import { elegantTheme } from "@/registry/themes";
+
+<ComponentPreview
+  base="forme"
+  name="invoice-creative"
+  theme={elegantTheme}
+  hideCode
+/>
+
+## Instalación
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Comando</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/theme-elegant
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copia y pega el siguiente código en tu proyecto.</Step>
+
+<ComponentSource
+  src="registry/themes/elegant.ts"
+  title="lib/themes/elegant.ts"
+/>
+
+<Step>
+  Actualiza las rutas de importación para que coincidan con la configuración de
+  tu proyecto.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Uso
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { elegantTheme } from "@/lib/pdf-themes/elegant";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={elegantTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```

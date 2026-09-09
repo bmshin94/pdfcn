@@ -1,0 +1,153 @@
+---
+title: 主题
+description: 为 Takumi 配置 PDF 主题、颜色、排版和间距。
+---
+
+import { ThemePreview } from "@/components/theme-preview";
+import { ThemePreviewGrid } from "@/components/theme-preview-grid";
+
+<ThemePreview base="takumi" />
+
+## 安装
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">命令</TabsTrigger>
+  <TabsTrigger value="manual">手动</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/theme-provider
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>将以下代码复制并粘贴到你的项目中。</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<Step>更新导入路径以匹配你的项目设置。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 用法
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { professionalTheme } from "@/lib/pdf-themes/professional";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={professionalTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```
+
+## 颜色令牌
+
+所有颜色值必须是十六进制字符串（例如 `#1a1a1a`）。React PDF 支持 hex、`rgb()` 和 `hsl()`——但不支持 `oklch`。
+
+| 令牌                | 用途             |
+| ------------------- | ---------------- |
+| `foreground`        | 主要文本颜色     |
+| `background`        | 页面背景         |
+| `muted`             | 次要背景         |
+| `mutedForeground`   | 说明文字、脚注   |
+| `primary`           | 品牌/强调色      |
+| `primaryForeground` | 主色背景上的文本 |
+| `border`            | 表格边框、分隔线 |
+| `accent`            | 行动号召元素     |
+| `destructive`       | 错误状态         |
+| `success`           | 成功状态         |
+| `warning`           | 警告状态         |
+| `info`              | 信息状态         |
+
+## 基础令牌
+
+基础令牌定义了主题可用的原始设计比例：
+
+- **排版比例** — 以 12pt 为基准的大三度（1.25）比例
+- **间距比例** — 4pt 网格系统
+- **字重** — 400–700
+- **行高** — 1.2–1.6
+- **圆角** — 0–8pt
+
+## 自定义主题
+
+使用 `PdfcnTheme` 接口创建自定义主题，同时保留完整的主题结构。
+
+```tsx
+import type { PdfcnTheme } from "@/registry/themes";
+import { defaultPrimitives } from "@/registry/themes";
+
+export const oceanTheme: PdfcnTheme = {
+  name: "ocean",
+  primitives: defaultPrimitives,
+  colors: {
+    foreground: "#0f172a",
+    background: "#ffffff",
+    primary: "#0369a1",
+    accent: "#0ea5e9",
+    muted: "#f1f5f9",
+    border: "#e2e8f0",
+    mutedForeground: "#64748b",
+    primaryForeground: "#ffffff",
+    destructive: "#dc2626",
+    success: "#16a34a",
+    warning: "#d97706",
+    info: "#0ea5e9",
+  },
+  typography: {
+    body: { fontFamily: "Helvetica", fontSize: 11, lineHeight: 1.6 },
+    heading: {
+      fontFamily: "Times-Roman",
+      fontWeight: 700,
+      lineHeight: 1.25,
+      fontSize: { h1: 32, h2: 24, h3: 20, h4: 16, h5: 14, h6: 12 },
+    },
+  },
+  spacing: {
+    page: { marginTop: 56, marginRight: 48, marginBottom: 56, marginLeft: 48 },
+    sectionGap: 28,
+    paragraphGap: 10,
+    componentGap: 14,
+  },
+  page: { size: "A4", orientation: "portrait" },
+};
+```
+
+## 可用主题
+
+<ThemePreviewGrid />

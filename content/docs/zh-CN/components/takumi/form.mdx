@@ -1,0 +1,133 @@
+---
+title: "表单"
+description: "用于 PDF 输入的带标签表单组。"
+---
+
+<ComponentPreview base="takumi" name="form" hideCode />
+
+## 安装
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">命令</TabsTrigger>
+  <TabsTrigger value="manual">手动</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/form
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>安装以下依赖：</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>将以下代码复制粘贴到你的项目中。</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/form/form.tsx"
+  base="takumi"
+  title="components/pdf/form/form.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>更新导入路径以匹配你的项目结构。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 用法
+
+```tsx
+import { PdfForm } from "@/components/pdf/form";
+```
+
+```tsx
+<PdfForm title="Contact" groups={[{ fields: [{ label: "Email" }] }]} />
+```
+
+### 变体
+
+```tsx
+<PdfForm
+  variant="outlined"
+  labelPosition="left"
+  groups={[{ title: "Contact", layout: "two-column", fields }]}
+/>
+```
+
+## API 参考
+
+### PdfForm
+
+| 属性            | 类型                                            | 默认值        |
+| --------------- | ----------------------------------------------- | ------------- |
+| `title`         | `string`                                        | -             |
+| `subtitle`      | `string`                                        | -             |
+| `groups`        | `PdfFormGroup[]`                                | -             |
+| `variant`       | `'underline' \| 'box' \| 'outlined' \| 'ghost'` | `'underline'` |
+| `labelPosition` | `'above' \| 'left'`                             | `'above'`     |
+| `noWrap`        | `boolean`                                       | `false`       |
+| `style`         | `Style`                                         | -             |
+
+分组支持 `single`、`two-column` 和 `three-column` 布局。

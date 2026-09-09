@@ -2,10 +2,7 @@
   "mcpServers": {
     "intlayer": {
       "command": "npx",
-      "args": [
-        "-y",
-        "@intlayer/mcp"
-      ]
+      "args": ["-y", "@intlayer/mcp"]
     }
   }
 }

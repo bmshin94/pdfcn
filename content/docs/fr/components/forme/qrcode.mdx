@@ -1,0 +1,113 @@
+---
+title: "Code QR"
+description: "Code QR généré à partir d'une valeur de chaîne de caractères."
+---
+
+<ComponentPreview base="forme" name="qrcode" hideCode />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Commande</TabsTrigger>
+  <TabsTrigger value="manual">Manuel</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/qrcode
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Installez les dépendances suivantes :</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>Copiez-collez le code suivant dans votre projet.</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/qrcode/qrcode.tsx"
+  base="forme"
+  title="components/pdf/qrcode/qrcode.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Mettez à jour les chemins d'importation pour correspondre à la configuration
+  de votre projet.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Utilisation
+
+```tsx
+import { PdfQRCode } from "@/components/pdf/qrcode";
+```
+
+```tsx
+<PdfQRCode value="https://pdfcn.dev" />
+```
+
+## Référence de l'API
+
+### PdfQRCode
+
+| Prop              | Type                       | Par défaut |
+| ----------------- | -------------------------- | ---------- |
+| `value`           | `string`                   | -          |
+| `size`            | `number`                   | -          |
+| `color`           | `string`                   | -          |
+| `backgroundColor` | `string`                   | -          |
+| `errorLevel`      | `'L' \| 'M' \| 'Q' \| 'H'` | -          |
+| `margin`          | `number`                   | -          |
+| `caption`         | `string`                   | -          |
+| `children`        | `never`                    | -          |

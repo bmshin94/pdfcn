@@ -1,0 +1,140 @@
+---
+title: "그래프"
+description: "SVG로 그려지는 막대, 선, 영역 차트입니다."
+---
+
+<ComponentPreview base="takumi" name="graph" hideCode />
+
+## 설치
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">명령어</TabsTrigger>
+  <TabsTrigger value="manual">수동</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/graph
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>다음 의존성을 설치하세요:</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>다음 코드를 프로젝트에 복사하여 붙여넣으세요.</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/graph/graph.tsx"
+  base="takumi"
+  title="components/pdf/graph/graph.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>프로젝트 구조에 맞게 import 경로를 업데이트하세요.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 사용법
+
+```tsx
+import { PdfGraph } from "@/components/pdf/graph";
+```
+
+```tsx
+<PdfGraph variant="bar" data={[{ label: "Q1", value: 30 }]} />
+```
+
+### 변형
+
+```tsx
+<PdfGraph variant="line" data={series} showDots smooth />
+<PdfGraph variant="donut" data={totals} centerLabel="$48k" />
+```
+
+## API 참조
+
+### PdfGraph
+
+| 속성          | 타입                                                                | 기본값     |
+| ------------- | ------------------------------------------------------------------- | ---------- |
+| `variant`     | `'bar' \| 'horizontal-bar' \| 'line' \| 'area' \| 'pie' \| 'donut'` | `'bar'`    |
+| `data`        | `GraphDataPoint[] \| GraphSeries[]`                                 | -          |
+| `title`       | `string`                                                            | -          |
+| `subtitle`    | `string`                                                            | -          |
+| `xLabel`      | `string`                                                            | -          |
+| `yLabel`      | `string`                                                            | -          |
+| `width`       | `number`                                                            | `420`      |
+| `height`      | `number`                                                            | `260`      |
+| `fullWidth`   | `boolean`                                                           | `false`    |
+| `colors`      | `string[]`                                                          | 테마       |
+| `showValues`  | `boolean`                                                           | `false`    |
+| `showGrid`    | `boolean`                                                           | `true`     |
+| `legend`      | `'bottom' \| 'right' \| 'none'`                                     | `'bottom'` |
+| `centerLabel` | `string`                                                            | -          |
+| `showDots`    | `boolean`                                                           | `true`     |
+| `smooth`      | `boolean`                                                           | `false`    |
+| `yTicks`      | `number`                                                            | `5`        |
+| `noWrap`      | `boolean`                                                           | `true`     |
+| `style`       | `Style`                                                             | -          |

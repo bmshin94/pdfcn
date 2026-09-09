@@ -1,0 +1,129 @@
+---
+title: "Liste"
+description: "Listes ordonnées et non ordonnées."
+---
+
+<ComponentPreview base="takumi" name="list" hideCode />
+
+## Installation
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Commande</TabsTrigger>
+  <TabsTrigger value="manual">Manuel</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/list
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Installez les dépendances suivantes :</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>Copiez-collez le code suivant dans votre projet.</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/list/list.tsx"
+  base="takumi"
+  title="components/pdf/list/list.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Mettez à jour les chemins d'importation pour qu'ils correspondent à la
+  configuration de votre projet.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Utilisation
+
+```tsx
+import { PdfList } from "@/components/pdf/list";
+```
+
+```tsx
+<PdfList items={[{ text: "Alpha" }, { text: "Beta" }]} />
+```
+
+### Variantes
+
+```tsx
+<PdfList variant="numbered" items={items} />
+<PdfList variant="checklist" items={checklistItems} gap="md" />
+```
+
+## Référence de l'API
+
+### PdfList
+
+| Propriété | Type                                                                                | Par défaut |
+| --------- | ----------------------------------------------------------------------------------- | ---------- |
+| `items`   | `ListItem[]`                                                                        | -          |
+| `variant` | `'bullet' \| 'numbered' \| 'checklist' \| 'icon' \| 'multi-level' \| 'descriptive'` | `'bullet'` |
+| `gap`     | `'xs' \| 'sm' \| 'md'`                                                              | `'sm'`     |
+| `noWrap`  | `boolean`                                                                           | `false`    |
+| `style`   | `Style`                                                                             | -          |

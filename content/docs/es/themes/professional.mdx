@@ -1,0 +1,65 @@
+---
+title: "Profesional"
+description: "Títulos con tipografía serif, paleta refinada en tonos zinc/pizarra, apariencia de documento formal."
+---
+
+import { professionalTheme } from "@/registry/themes";
+
+<ComponentPreview
+  base="forme"
+  name="invoice-classic"
+  theme={professionalTheme}
+  hideCode
+/>
+
+## Instalación
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Comando</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/theme-professional
+```
+
+</TabsContent>
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Copia y pega el siguiente código en tu proyecto.</Step>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  title="lib/themes/professional.ts"
+/>
+
+<Step>
+  Actualiza las rutas de importación para que coincidan con la configuración de
+  tu proyecto.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Uso
+
+```tsx
+import { PdfcnThemeProvider } from "@/components/pdf/theme-provider";
+import { professionalTheme } from "@/lib/pdf-themes/professional";
+
+export function Invoice() {
+  return (
+    <PdfcnThemeProvider theme={professionalTheme}>
+      {/* Your PDF content */}
+    </PdfcnThemeProvider>
+  );
+}
+```

@@ -1,0 +1,123 @@
+---
+title: "워터마크"
+description: "대각선 또는 중앙 정렬된 워터마크 오버레이입니다."
+---
+
+<ComponentPreview base="takumi" name="watermark" hideCode />
+
+## 설치
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">명령어</TabsTrigger>
+  <TabsTrigger value="manual">수동</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/takumi/watermark
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>다음 종속성을 설치하세요:</Step>
+
+```bash
+npm install takumi-pdf @takumi-rs/helpers
+```
+
+<Step>다음 코드를 프로젝트에 복사하여 붙여넣으세요.</Step>
+
+<ComponentSource
+  src="registry/bases/takumi/components/watermark/watermark.tsx"
+  base="takumi"
+  title="components/pdf/watermark/watermark.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/components/theme-provider.tsx"
+  base="takumi"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/resolve-color.ts"
+  base="takumi"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-primitives.tsx"
+  base="takumi"
+  title="lib/pdf-primitives.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/takumi/lib/pdf-svg.tsx"
+  base="takumi"
+  title="lib/pdf-svg.tsx"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="takumi"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="takumi"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="takumi"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="takumi"
+  title="types/pdf-components.ts"
+/>
+
+<Step>프로젝트 설정에 맞게 임포트 경로를 업데이트하세요.</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 사용법
+
+```tsx
+import { PdfWatermark } from "@/components/pdf/watermark";
+import { Text } from "@/components/pdf/text";
+```
+
+```tsx
+<PdfWatermark text="DRAFT" />
+```
+
+## API 참조
+
+### PdfWatermark
+
+| 속성       | 타입                                                                       | 기본값 |
+| ---------- | -------------------------------------------------------------------------- | ------ |
+| `text`     | `string`                                                                   | -      |
+| `opacity`  | `number`                                                                   | -      |
+| `fontSize` | `number`                                                                   | -      |
+| `color`    | `string`                                                                   | -      |
+| `angle`    | `number`                                                                   | -      |
+| `position` | `'center' \| 'top-left' \| 'top-right' \| 'bottom-left' \| 'bottom-right'` | -      |
+| `fixed`    | `boolean`                                                                  | `true` |
+| `children` | `never`                                                                    | -      |

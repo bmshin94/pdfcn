@@ -50,12 +50,12 @@ export default myFileContent;
 
 ```json5 fileName="**/*.content.json" contentDeclarationFormat="json"
 {
-  "$schema": "https://intlayer.org/schema.json",
-  "key": "my_key",
-  "content": {
-    "myFile": {
-      "nodeType": "file",
-      "value": "./path/to/file.txt",
+  $schema: "https://intlayer.org/schema.json",
+  key: "my_key",
+  content: {
+    myFile: {
+      nodeType: "file",
+      value: "./path/to/file.txt",
     },
   },
 }

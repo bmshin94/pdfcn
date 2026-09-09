@@ -1,0 +1,149 @@
+---
+title: "テーブル"
+description: "低レベルのテーブルプリミティブ。"
+---
+
+<ComponentPreview base="forme" name="table" hideCode />
+
+## インストール
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">コマンド</TabsTrigger>
+  <TabsTrigger value="manual">手動</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/table
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>以下の依存関係をインストールしてください：</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>以下のコードをコピーしてプロジェクトに貼り付けてください。</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/table/table.tsx"
+  base="forme"
+  title="components/pdf/table/table.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>インポートパスをプロジェクトの構成に合わせて更新してください。</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## 使い方
+
+```tsx
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableRow,
+  Text,
+} from "@/components/pdf/table";
+```
+
+```tsx
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableCell>
+        <Text>Item</Text>
+      </TableCell>
+    </TableRow>
+  </TableHeader>
+</Table>
+```
+
+### バリアント
+
+```tsx
+<Table variant="striped" zebraStripe>
+  {/* header, body, rows, and cells */}
+</Table>
+```
+
+## APIリファレンス
+
+### Table
+
+| プロパティ    | 型                                                                                          | デフォルト |
+| ------------- | ------------------------------------------------------------------------------------------- | ---------- |
+| `variant`     | `'line' \| 'grid' \| 'minimal' \| 'striped' \| 'compact' \| 'bordered' \| 'primary-header'` | `'line'`   |
+| `zebraStripe` | `boolean`                                                                                   | `false`    |
+| `noWrap`      | `boolean`                                                                                   | `false`    |
+| `children`    | `ReactNode`                                                                                 | -          |
+| `style`       | `Style`                                                                                     | -          |
+
+### TableRow
+
+| プロパティ | 型                                                                                          | デフォルト |
+| ---------- | ------------------------------------------------------------------------------------------- | ---------- |
+| `header`   | `boolean`                                                                                   | `false`    |
+| `footer`   | `boolean`                                                                                   | `false`    |
+| `stripe`   | `boolean`                                                                                   | `false`    |
+| `variant`  | `'line' \| 'grid' \| 'minimal' \| 'striped' \| 'compact' \| 'bordered' \| 'primary-header'` | inherited  |
+
+### TableCell
+
+| プロパティ | 型                                                                                          | デフォルト |
+| ---------- | ------------------------------------------------------------------------------------------- | ---------- |
+| `header`   | `boolean`                                                                                   | `false`    |
+| `footer`   | `boolean`                                                                                   | `false`    |
+| `align`    | `'left' \| 'center' \| 'right'`                                                             | `'left'`   |
+| `width`    | `string \| number`                                                                          | -          |
+| `variant`  | `'line' \| 'grid' \| 'minimal' \| 'striped' \| 'compact' \| 'bordered' \| 'primary-header'` | inherited  |

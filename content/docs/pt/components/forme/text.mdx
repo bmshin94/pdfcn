@@ -1,0 +1,113 @@
+---
+title: "Texto"
+description: "Texto de corpo com variantes tipográficas."
+---
+
+<ComponentPreview base="forme" name="text" hideCode />
+
+## Instalação
+
+<CodeTabs>
+
+<TabsList>
+  <TabsTrigger value="cli">Comando</TabsTrigger>
+  <TabsTrigger value="manual">Manual</TabsTrigger>
+</TabsList>
+
+<TabsContent value="cli">
+
+```bash
+npx shadcn@latest add @pdfcn/forme/text
+```
+
+</TabsContent>
+
+<TabsContent value="manual">
+
+<Steps>
+
+<Step>Instale as seguintes dependências:</Step>
+
+```bash
+npm install @formepdf/react @formepdf/core
+```
+
+<Step>Copie e cole o código a seguir no seu projeto.</Step>
+
+<ComponentSource
+  src="registry/bases/forme/components/text/text.tsx"
+  base="forme"
+  title="components/pdf/text/text.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/components/theme-provider.tsx"
+  base="forme"
+  title="components/pdf/theme-provider.tsx"
+/>
+
+<ComponentSource
+  src="registry/bases/forme/lib/resolve-color.ts"
+  base="forme"
+  title="lib/resolve-color.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/professional.ts"
+  base="forme"
+  title="lib/pdf-themes/professional.ts"
+/>
+
+<ComponentSource
+  src="registry/themes/primitives.ts"
+  base="forme"
+  title="lib/pdf-themes/primitives.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-themes.ts"
+  base="forme"
+  title="types/pdf-themes.ts"
+/>
+
+<ComponentSource
+  src="registry/types/pdf-components.ts"
+  base="forme"
+  title="types/pdf-components.ts"
+/>
+
+<Step>
+  Atualize os caminhos de importação para corresponder à configuração do seu
+  projeto.
+</Step>
+
+</Steps>
+
+</TabsContent>
+
+</CodeTabs>
+
+## Uso
+
+```tsx
+import { Text } from "@/components/pdf/text";
+```
+
+```tsx
+<Text>Hello from pdfcn</Text>
+```
+
+## Referência da API
+
+### Text
+
+| Prop         | Tipo                                                       | Padrão     |
+| ------------ | ---------------------------------------------------------- | ---------- |
+| `variant`    | `'xs' \| 'sm' \| 'base' \| 'lg' \| 'xl' \| '2xl' \| '3xl'` | `'base'`   |
+| `align`      | `'left' \| 'center' \| 'right' \| 'justify'`               | `'left'`   |
+| `color`      | `string`                                                   | -          |
+| `weight`     | `'normal' \| 'medium' \| 'semibold' \| 'bold'`             | `'normal'` |
+| `italic`     | `boolean`                                                  | `false`    |
+| `decoration` | `'underline' \| 'line-through' \| 'none'`                  | `'none'`   |
+| `transform`  | `'uppercase' \| 'lowercase' \| 'capitalize'`               | -          |
+| `noMargin`   | `boolean`                                                  | `false`    |
