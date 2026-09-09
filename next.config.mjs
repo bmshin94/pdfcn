@@ -1,6 +1,8 @@
 import { createMDX } from "fumadocs-mdx/next";
 import { createJiti } from "jiti";
 
+import { withIntlayer } from "next-intlayer/server";
+
 const jiti = createJiti(import.meta.url);
 
 const { LINK } = await jiti.import("./constants/links");
@@ -64,4 +66,4 @@ const nextConfig = {
 
 const withMDX = createMDX({});
 
-export default withMDX(nextConfig);
+export default withIntlayer(withMDX(nextConfig));

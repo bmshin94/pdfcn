@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "intlayer watch --with 'next dev'",
     "build": "pnpm registry:build && next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
@@ -54,6 +54,8 @@
   },
   "devDependencies": {
     "@formepdf/cli": "^0.10.5",
+    "@intlayer/babel": "^9.4.4",
+    "@intlayer/swc": "^9.4.4",
     "@tailwindcss/postcss": "^4.2.4",
     "@types/mdx": "^2.0.13",
     "@types/node": "^25.6.0",

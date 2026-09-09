@@ -55,5 +55,7 @@
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.oxc": "explicit"
-  }
+  },
+  "intlayer.languageServer.command": "npx",
+  "intlayer.languageServer.args": ["@intlayer/lsp"]
 }
