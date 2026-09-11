@@ -4,6 +4,7 @@ import { useIntlayer } from "next-intlayer";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { DocsAds } from "@/components/docs-ads";
 import {
   DocsBaseSwitcher,
   getDocsBaseSwitcherProps,
@@ -207,6 +208,7 @@ const Page = async (props: {
                   </div>
                 ) : null}
               </div>
+              <DocsAds slot="content" />
               <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
                 {baseSwitcher && (
                   <DocsBaseSwitcher {...baseSwitcher} className="mb-4" />
@@ -244,6 +246,7 @@ const Page = async (props: {
               </div>
             ) : null}
             <DocsTocFooter docId={page.path} className="mx-8" />
+            <DocsAds slot="sidebar" className="mx-8 shrink-0" />
           </div>
         </div>
       </PageTransition>
