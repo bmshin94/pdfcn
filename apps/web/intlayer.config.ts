@@ -28,14 +28,14 @@ const config: IntlayerConfig = {
      *
      * Minify the dictionaries to reduce the bundle size.
      */
-    minify: true,
+    minify: false,
 
     /**
      * (Experimental feature)
      *
      * Purge the unused keys in a dictionaries
      */
-    purge: true,
+    purge: false,
 
     /**
      * Indicates if the build should check TypeScript types

@@ -1,8 +1,9 @@
 import { findNeighbour } from "fumadocs-core/page-tree";
 import { ArrowLeftIcon, ArrowRightIcon, ArrowUpRightIcon } from "lucide-react";
-import { useIntlayer } from "next-intlayer";
+import { useIntlayer } from "next-intlayer/server";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { use } from "react";
 
 import { DocsAds } from "@/components/docs-ads";
 import {
@@ -92,17 +93,17 @@ const buildBreadcrumbs = (
   return items;
 };
 
-const Page = async (props: {
+const Page = (props: {
   params: Promise<{ locale: string; slug?: string[] }>;
 }) => {
-  const params = await props.params;
+  const params = use(props.params);
   const page = source.getPage(params.slug, params.locale);
 
   if (!page) {
     notFound();
   }
 
-  const content = useIntlayer("docs-page");
+  const content = useIntlayer("docs-page", params.locale);
 
   const doc = page.data;
   const MdxContent = doc.body;

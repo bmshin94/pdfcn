@@ -64,5 +64,6 @@ const nextConfig = {
 };
 
 const withMDX = createMDX({});
+const intlayerConfig = await withIntlayer(nextConfig);
 
-export default withIntlayer(withMDX(nextConfig));
+export default withMDX(intlayerConfig);
