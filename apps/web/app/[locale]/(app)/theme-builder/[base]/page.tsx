@@ -1,6 +1,5 @@
 import { getIntlayer } from "intlayer";
 import type { Metadata } from "next";
-import { getLocale } from "next-intlayer/server";
 import { notFound } from "next/navigation";
 
 import { ThemeBuilder } from "@/components/theme-builder/theme-builder";
@@ -11,7 +10,7 @@ import { createPageMetadata } from "@/seo/metadata";
 export const dynamicParams = false;
 
 interface ThemeBuilderBasePageProps {
-  params: Promise<{ base: BaseName }>;
+  params: Promise<{ locale: string; base: BaseName }>;
 }
 
 export const generateStaticParams = () => BASE_NAMES.map((base) => ({ base }));
@@ -19,8 +18,7 @@ export const generateStaticParams = () => BASE_NAMES.map((base) => ({ base }));
 export const generateMetadata = async ({
   params,
 }: ThemeBuilderBasePageProps): Promise<Metadata> => {
-  const { base } = await params;
-  const locale = await getLocale();
+  const { base, locale } = await params;
   const content = getIntlayer("theme-builder-page", locale);
 
   return createPageMetadata({

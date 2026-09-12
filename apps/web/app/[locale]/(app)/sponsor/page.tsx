@@ -2,7 +2,6 @@ import { getIntlayer } from "intlayer";
 import { ExternalLink, Heart, Plus, Star } from "lucide-react";
 import type { Metadata } from "next";
 import { useIntlayer } from "next-intlayer";
-import { getLocale } from "next-intlayer/server";
 import Image from "next/image";
 
 import { ExternalLinkButton } from "@/components/external-link-button";
@@ -50,8 +49,12 @@ const SponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => {
   );
 };
 
-export const generateMetadata = async (): Promise<Metadata> => {
-  const locale = await getLocale();
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> => {
+  const { locale } = await params;
   const content = getIntlayer("sponsor-page", locale);
 
   return createPageMetadata({

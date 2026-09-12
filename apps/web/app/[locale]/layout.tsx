@@ -1,6 +1,6 @@
 import { SoundProvider } from "@web-kits/audio/react";
 import type { Metadata } from "next";
-import { IntlayerProvider, getLocale } from "next-intlayer/server";
+import { IntlayerProvider } from "next-intlayer/server";
 
 import { Analytics } from "@/components/analytics";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -18,10 +18,12 @@ export const metadata: Metadata = baseMetadata;
 
 const RootLayout = async ({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) => {
-  const locale = await getLocale();
+  const { locale } = await params;
 
   return (
     <html lang={locale} suppressHydrationWarning>
