@@ -8,12 +8,6 @@ import type { IntlayerConfig } from "intlayer";
 
 const config: IntlayerConfig = {
   ai: {
-    /**
-     * AI provider to use.
-     * Options: 'openai', 'anthropic', 'mistral', 'deepseek', 'gemini', 'ollama', 'openrouter', 'alibaba', 'fireworks', 'groq', 'huggingface', 'bedrock', 'googlevertex', 'togetherai', 'lmstudio', 'moonshotai'
-     */
-    provider: "openai",
-    model: "gpt-5-mini",
     apiKey: process.env.OPENAI_API_KEY,
     /**
      * Additional context for the translations
@@ -21,8 +15,19 @@ const config: IntlayerConfig = {
      * Can be use in addition of the dictionary `description` field
      */
     applicationContext: [""].join("\n"),
+    model: "gpt-5-mini",
+    /**
+     * AI provider to use.
+     * Options: 'openai', 'anthropic', 'mistral', 'deepseek', 'gemini', 'ollama', 'openrouter', 'alibaba', 'fireworks', 'groq', 'huggingface', 'bedrock', 'googlevertex', 'togetherai', 'lmstudio', 'moonshotai'
+     */
+    provider: "openai",
   },
   build: {
+    /**
+     * Indicates if the build should check TypeScript types
+     */
+    checkTypes: false,
+
     /**
      * (Experimental feature)
      *
@@ -36,11 +41,6 @@ const config: IntlayerConfig = {
      * Purge the unused keys in a dictionaries
      */
     purge: true,
-
-    /**
-     * Indicates if the build should check TypeScript types
-     */
-    checkTypes: false,
   },
   compiler: {
     enabled: false,
@@ -101,16 +101,20 @@ const config: IntlayerConfig = {
   },
   editor: {
     /**
-     * Whether the visual editor is enabled.
-     */
-    enabled: false,
-
-    /**
      * URL of your application for origin validation.
      */
     applicationURL: "http://localhost:3000",
+
+    /**
+     * Whether the visual editor is enabled.
+     */
+    enabled: false,
   },
   internationalization: {
+    /**
+     * Default locale used as a fallback if the requested locale is not found.
+     */
+    defaultLocale: Locales.ENGLISH,
     locales: [
       Locales.ENGLISH,
       Locales.CHINESE_SIMPLIFIED_CHINA,
@@ -120,22 +124,8 @@ const config: IntlayerConfig = {
       Locales.FRENCH,
       Locales.PORTUGUESE,
     ],
-    /**
-     * Default locale used as a fallback if the requested locale is not found.
-     */
-    defaultLocale: Locales.ENGLISH,
   },
   routing: {
-    /**
-     * Locale routing strategy.
-     * - "prefix-no-default": Prefix all except the default locale (e.g., /dashboard, /fr/dashboard).
-     * - "prefix-all": Prefix all locales (e.g., /en/dashboard, /fr/dashboard).
-     * - "no-prefix": No locale in the URL.
-     * - "search-params": Use search params to define the locale (e.g., /dashboard/?locale=en, /dashboard/?locale=fr)
-     * Default: "prefix-no-default"
-     */
-    mode: "prefix-no-default",
-
     /**
      * Enables the Intlayer locale-routing proxy (middleware).
      * Handles locale detection, redirects and rewrites in dev, preview and SSR.
@@ -145,6 +135,16 @@ const config: IntlayerConfig = {
      * Default: undefined (auto)
      */
     enableProxy: true,
+
+    /**
+     * Locale routing strategy.
+     * - "prefix-no-default": Prefix all except the default locale (e.g., /dashboard, /fr/dashboard).
+     * - "prefix-all": Prefix all locales (e.g., /en/dashboard, /fr/dashboard).
+     * - "no-prefix": No locale in the URL.
+     * - "search-params": Use search params to define the locale (e.g., /dashboard/?locale=en, /dashboard/?locale=fr)
+     * Default: "prefix-no-default"
+     */
+    mode: "prefix-no-default",
   },
 };
 

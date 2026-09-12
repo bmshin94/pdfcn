@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      intlayer:
+        specifier: 9.5.0
+        version: 9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.5.4)
       lefthook:
         specifier: ^2.1.6
         version: 2.1.6
@@ -43,7 +46,7 @@ importers:
         version: 2.10.0(react@19.2.5)
       '@vercel/analytics':
         specifier: ^2.0.1
-        version: 2.0.1(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        version: 2.0.1(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@web-kits/audio':
         specifier: ^0.1.0
         version: 0.1.0(react@19.2.5)
@@ -58,10 +61,10 @@ importers:
         version: 0.2.6
       fumadocs-core:
         specifier: ^16.8.4
-        version: 16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6)
+        version: 16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6)
       fumadocs-mdx:
         specifier: ^14.3.1
-        version: 14.3.1(@types/mdast@4.0.4)(@types/mdx@2.0.13)(@types/react@19.2.14)(fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        version: 14.3.1(@types/mdast@4.0.4)(@types/mdx@2.0.13)(@types/react@19.2.14)(fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       intlayer:
         specifier: 9.5.0
         version: 9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.3.6)
@@ -70,7 +73,7 @@ importers:
         version: 2.6.1
       jotai:
         specifier: ^2.19.1
-        version: 2.19.1(@babel/core@8.0.1)(@babel/template@8.0.0)(@types/react@19.2.14)(react@19.2.5)
+        version: 2.19.1(@babel/core@7.29.0)(@babel/template@8.0.0)(@types/react@19.2.14)(react@19.2.5)
       lru-cache:
         specifier: ^11.3.5
         version: 11.3.5
@@ -82,10 +85,10 @@ importers:
         version: 12.38.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       next:
         specifier: 16.3.5
-        version: 16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       next-intlayer:
         specifier: 9.5.0
-        version: 9.5.0(@intlayer/babel@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@6.0.3)(webpack@5.110.3(postcss@8.5.23))(zod@4.3.6)
+        version: 9.5.0(@intlayer/babel@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@6.0.3)(webpack@5.110.3(postcss@8.5.23))(zod@4.3.6)
       next-themes:
         specifier: 0.4.6
         version: 0.4.6(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -5429,7 +5432,7 @@ snapshots:
       '@babel/parser': 8.0.4
       '@babel/template': 8.0.0
       '@babel/traverse': 8.0.4
-      '@babel/types': 8.0.4
+      '@babel/types': 8.0.5
       '@types/gensync': 1.0.5
       convert-source-map: 2.0.0
       empathic: 2.0.1
@@ -5450,7 +5453,7 @@ snapshots:
   '@babel/generator@8.0.0':
     dependencies:
       '@babel/parser': 8.0.4
-      '@babel/types': 8.0.4
+      '@babel/types': 8.0.5
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
       '@types/jsesc': 2.5.1
@@ -5570,7 +5573,7 @@ snapshots:
 
   '@babel/parser@8.0.4':
     dependencies:
-      '@babel/types': 8.0.4
+      '@babel/types': 8.0.5
 
   '@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0)':
     dependencies:
@@ -5627,7 +5630,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 8.0.0
       '@babel/parser': 8.0.4
-      '@babel/types': 8.0.4
+      '@babel/types': 8.0.5
 
   '@babel/traverse@7.29.0':
     dependencies:
@@ -5648,7 +5651,7 @@ snapshots:
       '@babel/helper-globals': 8.0.0
       '@babel/parser': 8.0.4
       '@babel/template': 8.0.0
-      '@babel/types': 8.0.4
+      '@babel/types': 8.0.5
       obug: 2.2.1
 
   '@babel/types@7.29.0':
@@ -6173,6 +6176,26 @@ snapshots:
       - typescript
       - zod
 
+  '@intlayer/babel@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.5.4)':
+    dependencies:
+      '@babel/core': 8.0.1
+      '@babel/generator': 8.0.0
+      '@babel/parser': 8.0.4
+      '@babel/plugin-syntax-jsx': 8.0.1(@babel/core@8.0.1)
+      '@babel/traverse': 8.0.4
+      '@babel/types': 8.0.4
+      '@intlayer/config': 9.5.0(react@19.2.5)
+      '@intlayer/core': 9.5.0(react@19.2.5)
+      '@intlayer/dictionaries-entry': 9.5.0(react@19.2.5)
+      '@intlayer/engine': 9.5.0(@intlayer/babel@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.5.4))(react@19.2.5)(typescript@6.0.3)(zod@4.5.4)
+      '@intlayer/types': 9.5.0
+      '@intlayer/unmerged-dictionaries-entry': 9.5.0(react@19.2.5)
+    transitivePeerDependencies:
+      - react
+      - supports-color
+      - typescript
+      - zod
+
   '@intlayer/cli@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.3.6)':
     dependencies:
       '@clack/prompts': 1.7.0
@@ -6182,6 +6205,30 @@ snapshots:
       '@intlayer/core': 9.5.0(react@19.2.5)
       '@intlayer/dictionaries-entry': 9.5.0(react@19.2.5)
       '@intlayer/engine': 9.5.0(@intlayer/babel@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(react@19.2.5)(typescript@6.0.3)(zod@4.3.6)
+      '@intlayer/remote-dictionaries-entry': 9.5.0(react@19.2.5)
+      '@intlayer/types': 9.5.0
+      '@intlayer/unmerged-dictionaries-entry': 9.5.0(react@19.2.5)
+      commander: 15.0.0
+      enquirer: 2.4.1
+      eventsource: 5.1.1
+      fast-glob: 3.3.3
+    transitivePeerDependencies:
+      - '@intlayer/svelte-compiler'
+      - '@intlayer/vue-compiler'
+      - react
+      - supports-color
+      - typescript
+      - zod
+
+  '@intlayer/cli@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.5.4)':
+    dependencies:
+      '@clack/prompts': 1.7.0
+      '@intlayer/api': 9.5.0(react@19.2.5)
+      '@intlayer/babel': 9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.5.4)
+      '@intlayer/config': 9.5.0(react@19.2.5)
+      '@intlayer/core': 9.5.0(react@19.2.5)
+      '@intlayer/dictionaries-entry': 9.5.0(react@19.2.5)
+      '@intlayer/engine': 9.5.0(@intlayer/babel@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.5.4))(react@19.2.5)(typescript@6.0.3)(zod@4.5.4)
       '@intlayer/remote-dictionaries-entry': 9.5.0(react@19.2.5)
       '@intlayer/types': 9.5.0
       '@intlayer/unmerged-dictionaries-entry': 9.5.0(react@19.2.5)
@@ -6251,6 +6298,29 @@ snapshots:
       zod-to-ts: 2.1.0(typescript@6.0.3)(zod@4.3.6)
     optionalDependencies:
       '@intlayer/babel': 9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.3.6)
+    transitivePeerDependencies:
+      - react
+      - supports-color
+      - typescript
+      - zod
+
+  '@intlayer/engine@9.5.0(@intlayer/babel@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.5.4))(react@19.2.5)(typescript@6.0.3)(zod@4.5.4)':
+    dependencies:
+      '@intlayer/api': 9.5.0(react@19.2.5)
+      '@intlayer/config': 9.5.0(react@19.2.5)
+      '@intlayer/core': 9.5.0(react@19.2.5)
+      '@intlayer/dictionaries-entry': 9.5.0(react@19.2.5)
+      '@intlayer/remote-dictionaries-entry': 9.5.0(react@19.2.5)
+      '@intlayer/types': 9.5.0
+      '@intlayer/unmerged-dictionaries-entry': 9.5.0(react@19.2.5)
+      '@parcel/watcher': 2.6.0
+      defu: 6.1.7
+      fast-glob: 3.3.3
+      recast: 0.24.0
+      simple-git: 3.36.0
+      zod-to-ts: 2.1.0(typescript@6.0.3)(zod@4.5.4)
+    optionalDependencies:
+      '@intlayer/babel': 9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.5.4)
     transitivePeerDependencies:
       - react
       - supports-color
@@ -7633,9 +7703,9 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vercel/analytics@2.0.1(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
+  '@vercel/analytics@2.0.1(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
     optionalDependencies:
-      next: 16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      next: 16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react: 19.2.5
 
   '@web-kits/audio@0.1.0(react@19.2.5)':
@@ -8394,7 +8464,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6):
+  fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6):
     dependencies:
       '@orama/orama': 3.1.18
       estree-util-value-to-estree: 3.5.0
@@ -8420,21 +8490,21 @@ snapshots:
       '@types/mdast': 4.0.4
       '@types/react': 19.2.14
       lucide-react: 1.11.0(react@19.2.5)
-      next: 16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      next: 16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
       zod: 4.3.6
     transitivePeerDependencies:
       - supports-color
 
-  fumadocs-mdx@14.3.1(@types/mdast@4.0.4)(@types/mdx@2.0.13)(@types/react@19.2.14)(fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5):
+  fumadocs-mdx@14.3.1(@types/mdast@4.0.4)(@types/mdx@2.0.13)(@types/react@19.2.14)(fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5):
     dependencies:
       '@mdx-js/mdx': 3.1.1
       '@standard-schema/spec': 1.1.0
       chokidar: 5.0.0
       esbuild: 0.28.0
       estree-util-value-to-estree: 3.5.0
-      fumadocs-core: 16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6)
+      fumadocs-core: 16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6)
       js-yaml: 4.1.1
       mdast-util-mdx: 3.0.0
       mdast-util-to-markdown: 2.1.2
@@ -8451,7 +8521,7 @@ snapshots:
       '@types/mdast': 4.0.4
       '@types/mdx': 2.0.13
       '@types/react': 19.2.14
-      next: 16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      next: 16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react: 19.2.5
     transitivePeerDependencies:
       - supports-color
@@ -8676,6 +8746,21 @@ snapshots:
       - typescript
       - zod
 
+  intlayer@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.5.4):
+    dependencies:
+      '@intlayer/cli': 9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.5.4)
+      '@intlayer/config': 9.5.0(react@19.2.5)
+      '@intlayer/core': 9.5.0(react@19.2.5)
+      '@intlayer/types': 9.5.0
+    transitivePeerDependencies:
+      - '@intlayer/ai'
+      - '@intlayer/svelte-compiler'
+      - '@intlayer/vue-compiler'
+      - react
+      - supports-color
+      - typescript
+      - zod
+
   ip-address@10.1.0: {}
 
   ipaddr.js@1.9.1: {}
@@ -8749,9 +8834,9 @@ snapshots:
 
   jose@6.2.2: {}
 
-  jotai@2.19.1(@babel/core@8.0.1)(@babel/template@8.0.0)(@types/react@19.2.14)(react@19.2.5):
+  jotai@2.19.1(@babel/core@7.29.0)(@babel/template@8.0.0)(@types/react@19.2.14)(react@19.2.5):
     optionalDependencies:
-      '@babel/core': 8.0.1
+      '@babel/core': 7.29.0
       '@babel/template': 8.0.0
       '@types/react': 19.2.14
       react: 19.2.5
@@ -9452,7 +9537,7 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next-intlayer@9.5.0(@intlayer/babel@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@6.0.3)(webpack@5.110.3(postcss@8.5.23))(zod@4.3.6):
+  next-intlayer@9.5.0(@intlayer/babel@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@6.0.3)(webpack@5.110.3(postcss@8.5.23))(zod@4.3.6):
     dependencies:
       '@intlayer/config': 9.5.0(react@19.2.5)
       '@intlayer/core': 9.5.0(react@19.2.5)
@@ -9461,7 +9546,7 @@ snapshots:
       '@intlayer/types': 9.5.0
       '@intlayer/webpack': 9.5.0(@intlayer/babel@9.5.0(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(react@19.2.5)(typescript@6.0.3)(webpack@5.110.3(postcss@8.5.23))(zod@4.3.6)
       defu: 6.1.7
-      next: 16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      next: 16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       node-loader: 2.1.0(webpack@5.110.3(postcss@8.5.23))
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
@@ -9480,7 +9565,7 @@ snapshots:
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
 
-  next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
       '@next/env': 16.3.5
       '@swc/helpers': 0.5.23
@@ -9489,7 +9574,7 @@ snapshots:
       postcss: 8.5.23
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
-      styled-jsx: 5.1.6(@babel/core@8.0.1)(react@19.2.5)
+      styled-jsx: 5.1.6(@babel/core@7.29.0)(react@19.2.5)
     optionalDependencies:
       '@next/swc-darwin-arm64': 16.3.5
       '@next/swc-darwin-x64': 16.3.5
@@ -10324,12 +10409,12 @@ snapshots:
     dependencies:
       inline-style-parser: 0.2.7
 
-  styled-jsx@5.1.6(@babel/core@8.0.1)(react@19.2.5):
+  styled-jsx@5.1.6(@babel/core@7.29.0)(react@19.2.5):
     dependencies:
       client-only: 0.0.1
       react: 19.2.5
     optionalDependencies:
-      '@babel/core': 8.0.1
+      '@babel/core': 7.29.0
 
   sucrase@3.35.1:
     dependencies:
@@ -10725,6 +10810,11 @@ snapshots:
     dependencies:
       typescript: 6.0.3
       zod: 4.3.6
+
+  zod-to-ts@2.1.0(typescript@6.0.3)(zod@4.5.4):
+    dependencies:
+      typescript: 6.0.3
+      zod: 4.5.4
 
   zod@3.25.76: {}
 

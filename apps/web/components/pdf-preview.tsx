@@ -215,7 +215,7 @@ export const PdfPreview = ({
         onUrlChange?.(null);
       }
     };
-  }, [base, name, onUrlChange, theme]);
+  }, [base, content.failedToRenderPdf, name, onUrlChange, theme]);
 
   return (
     <div
