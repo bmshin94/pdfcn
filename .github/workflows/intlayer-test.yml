@@ -25,6 +25,6 @@ jobs:
       - name: 📦 Install dependencies
         run: pnpm install --frozen-lockfile
       - name: ⚙️ Build dictionaries
-        run: pnpm exec intlayer ci build
+        run: pnpm exec intlayer build
       - name: 🧪 Test for missing translations
-        run: pnpm exec intlayer ci test
+        run: pnpm exec intlayer test

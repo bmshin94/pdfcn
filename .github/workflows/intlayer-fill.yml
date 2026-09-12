@@ -50,12 +50,12 @@ jobs:
       - name: 📦 Install dependencies
         run: pnpm install --frozen-lockfile
       - name: ⚙️ Build dictionaries
-        run: pnpm exec intlayer ci build
+        run: pnpm exec intlayer build
       - name: 🤖 Fill missing translations
         # Skip when no AI credentials are configured, so the workflow stays green
         # until an `AI_API_KEY` (or Intlayer CMS access keys) secret is added.
         if: ${{ env.AI_API_KEY != '' || env.INTLAYER_CLIENT_ID != '' }}
-        run: pnpm exec intlayer ci fill --git-diff --mode complete --provider $AI_PROVIDER --model $AI_MODEL --api-key $AI_API_KEY
+        run: pnpm exec intlayer fill --git-diff --mode complete --provider $AI_PROVIDER --model $AI_MODEL --api-key $AI_API_KEY
       - name: 📤 Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

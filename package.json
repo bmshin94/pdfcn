@@ -17,7 +17,7 @@
     "prepare": "lefthook install"
   },
   "devDependencies": {
-    "intlayer": "9.5.0",
+    "intlayer": "9.5.1",
     "lefthook": "^2.1.6",
     "oxfmt": "^0.46.0",
     "oxlint": "^1.61.0",
