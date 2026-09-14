@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "intlayer watch --with \"next dev\"",
+    "dev": "next dev",
     "build": "pnpm registry:build && next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
@@ -14,7 +14,6 @@
   "dependencies": {
     "@formepdf/core": "^0.10.5",
     "@formepdf/react": "^0.10.5",
-    "@intlayer/swc": "^9.5.1",
     "@takumi-rs/helpers": "^2.10.0",
     "@vercel/analytics": "^2.0.1",
     "@web-kits/audio": "^0.1.0",
@@ -30,7 +29,7 @@
     "lucide-react": "1.11.0",
     "motion": "^12.38.0",
     "next": "16.3.5",
-    "next-intlayer": "9.5.0",
+    "next-intlayer": "9.5.1",
     "next-themes": "0.4.6",
     "pdfjs-dist": "5.4.296",
     "postcss": "^8.5.10",
@@ -53,6 +52,7 @@
   },
   "devDependencies": {
     "@formepdf/cli": "^0.10.5",
+    "@intlayer/swc": "^9.5.1",
     "@tailwindcss/postcss": "^4.2.4",
     "@types/mdx": "^2.0.13",
     "@types/node": "^25.6.0",

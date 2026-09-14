@@ -103,7 +103,7 @@ const Page = (props: {
     notFound();
   }
 
-  const content = useIntlayer("docs-page", params.locale);
+  const content = useIntlayer("docs-page");
 
   const doc = page.data;
   const MdxContent = doc.body;

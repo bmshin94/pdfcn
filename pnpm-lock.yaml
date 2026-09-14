@@ -38,15 +38,12 @@ importers:
       '@formepdf/react':
         specifier: ^0.10.5
         version: 0.10.5(react@19.2.5)
-      '@intlayer/swc':
-        specifier: ^9.5.1
-        version: 9.5.1
       '@takumi-rs/helpers':
         specifier: ^2.10.0
         version: 2.10.0(react@19.2.5)
       '@vercel/analytics':
         specifier: ^2.0.1
-        version: 2.0.1(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        version: 2.0.1(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       '@web-kits/audio':
         specifier: ^0.1.0
         version: 0.1.0(react@19.2.5)
@@ -61,10 +58,10 @@ importers:
         version: 0.2.6
       fumadocs-core:
         specifier: ^16.8.4
-        version: 16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6)
+        version: 16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6)
       fumadocs-mdx:
         specifier: ^14.3.1
-        version: 14.3.1(@types/mdast@4.0.4)(@types/mdx@2.0.13)(@types/react@19.2.14)(fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
+        version: 14.3.1(@types/mdast@4.0.4)(@types/mdx@2.0.13)(@types/react@19.2.14)(fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)
       intlayer:
         specifier: 9.5.1
         version: 9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6)
@@ -73,7 +70,7 @@ importers:
         version: 2.6.1
       jotai:
         specifier: ^2.19.1
-        version: 2.19.1(@babel/core@8.0.1)(@babel/template@8.0.0)(@types/react@19.2.14)(react@19.2.5)
+        version: 2.19.1(@babel/core@7.29.0)(@babel/template@8.0.0)(@types/react@19.2.14)(react@19.2.5)
       lru-cache:
         specifier: ^11.3.5
         version: 11.3.5
@@ -85,10 +82,10 @@ importers:
         version: 12.38.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       next:
         specifier: 16.3.5
-        version: 16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       next-intlayer:
-        specifier: 9.5.0
-        version: 9.5.0(@intlayer/babel@9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@6.0.3)(webpack@5.110.3(postcss@8.5.23))(zod@4.3.6)
+        specifier: 9.5.1
+        version: 9.5.1(@intlayer/babel@9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@6.0.3)(webpack@5.110.3(postcss@8.5.23))(zod@4.3.6)
       next-themes:
         specifier: 0.4.6
         version: 0.4.6(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -150,6 +147,9 @@ importers:
       '@formepdf/cli':
         specifier: ^0.10.5
         version: 0.10.5(react@19.2.5)
+      '@intlayer/swc':
+        specifier: ^9.5.1
+        version: 9.5.1
       '@tailwindcss/postcss':
         specifier: ^4.2.4
         version: 4.2.4
@@ -1124,12 +1124,8 @@ packages:
       '@types/node':
         optional: true
 
-  '@intlayer/analytics@9.5.0':
-    resolution: {integrity: sha512-vWQzQV7OWulElaHUmDASMTrv4tm9xsSXTmv2VsCZ2qqz1yvDWLDYAymXkNGWRWSl+z6GskyOOTI7BFxDr9GRcw==}
-    engines: {node: '>=14.18'}
-
-  '@intlayer/api@9.5.0':
-    resolution: {integrity: sha512-UIbcPsse1U2coj0w81lpt8Ga5NrTsk7JHDSt4lbs/zoJt+yD/XtXnPPhSHpv5MLeU3UMjkHmh2t8CW+XCGVyGQ==}
+  '@intlayer/analytics@9.5.1':
+    resolution: {integrity: sha512-KDaypi6JIe2Y1RfgR9kwUMtygw/jo/wN6CXL78JnDLc+niJrq2w2ClJaKot+LFOGmrCH+mDRFusRbqh4WKqK9g==}
     engines: {node: '>=14.18'}
 
   '@intlayer/api@9.5.1':
@@ -1156,15 +1152,6 @@ packages:
       '@intlayer/ai':
         optional: true
 
-  '@intlayer/config@9.5.0':
-    resolution: {integrity: sha512-VJjJxExhS+5GkqbsQgT2hzQ933XPsH1CzVzE9gjZcuSZHdD86aoCnNwDR3GtnsY2p7dCVP17MA1Opd4+EdTptQ==}
-    engines: {node: '>=14.18'}
-    peerDependencies:
-      react: '>=16.0.0'
-    peerDependenciesMeta:
-      react:
-        optional: true
-
   '@intlayer/config@9.5.1':
     resolution: {integrity: sha512-BYXXSn9jlu3gO7XyMCaSJN5jLPiApAwH/Stdqick3v5tYMIHtTJ9QbVWAmP/9k+lgzkV37FKJVBNGNSXM1qmEw==}
     engines: {node: '>=14.18'}
@@ -1174,34 +1161,17 @@ packages:
       react:
         optional: true
 
-  '@intlayer/core@9.5.0':
-    resolution: {integrity: sha512-PYyHf6fhUvQml4TE5q8P+YFONe2TZ+pdbTz0HUDpGnmaQ2qGj/gNx8SFFK94wbSb3vI8n8Hwvgi8E+b91rawZg==}
-    engines: {node: '>=14.18'}
-
   '@intlayer/core@9.5.1':
     resolution: {integrity: sha512-xlsU/gPKavz/Af3VR0XkUOWZYoGb3Zzt6KuzCSxAIB/UJX3jJ11RdJQSPjBQCpe6s+LahYAem7gwTxEjJigIfQ==}
-    engines: {node: '>=14.18'}
-
-  '@intlayer/dictionaries-entry@9.5.0':
-    resolution: {integrity: sha512-c68a4q8HtJR3XltlmJ58ZWIxUDiCltEs/wgTxP8AyxqSaXTHFj71aJOtTqBCGLkybX484qbu9Zwc6dywcoP5sA==}
     engines: {node: '>=14.18'}
 
   '@intlayer/dictionaries-entry@9.5.1':
     resolution: {integrity: sha512-iUqral1ahb4N3Aiplo+q4WWn45gcPR3ZVfYivRWnEw5MmYgRGlYTUEY5Ak/NJ+u8vQ2yezpSU3SbOtTNKVMK2g==}
     engines: {node: '>=14.18'}
 
-  '@intlayer/editor@9.5.0':
-    resolution: {integrity: sha512-K5guGmSP4+TK2wkjt33x9gXC+m737aBCpOJHtDcwdMJVMMv/JpctNNJYs8QAbHd8o0iqIfAAlEztd9DWFJ6Fbg==}
+  '@intlayer/editor@9.5.1':
+    resolution: {integrity: sha512-+SiB9Z0ppyHlecFDnWW2zdrar6MV7SoK+q0XWv0Vbpky4vAv2SYwJVAt2dtMD6oKyCG1F+IRQvPd0KoJTw9oZA==}
     engines: {node: '>=14.18'}
-
-  '@intlayer/engine@9.5.0':
-    resolution: {integrity: sha512-foN+MX1C4zAQs9Rq7lMjMnhrgX0UZMcZ0nNd6BQq6bR0vGge21+WjwVpgjjnUWPjaLezK3equ0AB/aZTZzuJzg==}
-    engines: {node: '>=14.18'}
-    peerDependencies:
-      '@intlayer/babel': 9.5.0
-    peerDependenciesMeta:
-      '@intlayer/babel':
-        optional: true
 
   '@intlayer/engine@9.5.1':
     resolution: {integrity: sha512-vX5Spr7CcHN/Hs1v5bHTXBvGTFGI7lWiitT5No9BpNFByvOQIaVa7jDiXCd8tLdjXzNcCZiFUn5uXon2qmb3dQ==}
@@ -1212,10 +1182,6 @@ packages:
       '@intlayer/babel':
         optional: true
 
-  '@intlayer/remote-dictionaries-entry@9.5.0':
-    resolution: {integrity: sha512-0yGWxwKKIlMA7tu5FtLPOl6DJi+icoMminzDJO8XzXQlkWwUwi4SZyVH3Z8pFsbgOqrUOeoM4fpxNyihXzUVVQ==}
-    engines: {node: '>=14.18'}
-
   '@intlayer/remote-dictionaries-entry@9.5.1':
     resolution: {integrity: sha512-2/5UILrBZU070pLcIdM1K/i6uTnKpjee5yj7Ktz2l6jnIh+YzI08Z8ES5H2LDNosdP5AaIdLIFQhLllLkd9nyQ==}
     engines: {node: '>=14.18'}
@@ -1224,33 +1190,13 @@ packages:
     resolution: {integrity: sha512-KSrfPvIBGi439tHBRtVinQjScXC0aeA/mpad0TPb3kIuq9AkMoNFg/3UipK70Ng6P0zqZ99mXEdwxf+B4BDdPw==}
     engines: {node: '>=14.18'}
 
-  '@intlayer/types@9.5.0':
-    resolution: {integrity: sha512-t5X1JjAf4FbVAjMA+y7jBlnWhRlQe8f2HC97eZLCB5/SzrB7mztxR8VQqUlLMXgz3BAlZKhQGwrsGMXB/1ripw==}
-    engines: {node: '>=14.18'}
-
   '@intlayer/types@9.5.1':
     resolution: {integrity: sha512-Xj6c9M8oW8NF8VvpqfNBsyCY5rBUdOwdpbaqTIw06xyr1allTJzbgW4gLZtx0XMfdIivq6WA3BTy99KvqNGxew==}
-    engines: {node: '>=14.18'}
-
-  '@intlayer/unmerged-dictionaries-entry@9.5.0':
-    resolution: {integrity: sha512-ApA/O/Kahzv86BAyRX1mMeY3xi14sno44niICs+lxtiNQ5e8XFSh3rT4ctY7gaCjbP0LgcfhU0ReZGsjCzqiZg==}
     engines: {node: '>=14.18'}
 
   '@intlayer/unmerged-dictionaries-entry@9.5.1':
     resolution: {integrity: sha512-hZDXdg9yTpQlwHTBMn7n0XZEe+2rc1uGiBjeEZTKQw6I0K/vyx9PohDaasYRzp0EteeUB1c8b4ecfoTIFkhC8Q==}
     engines: {node: '>=14.18'}
-
-  '@intlayer/webpack@9.5.0':
-    resolution: {integrity: sha512-NnY1R+DqtQSvIN5Cw+CbaZG7gODVwdLv7UHzuU7j4o9VjU8Hgrrn5wc+Vb8e04bJA8q0ReF7dLAYi1WvUVvipg==}
-    engines: {node: '>=14.18'}
-    peerDependencies:
-      webpack: '>=5.0.0'
-      webpack-dev-server: '>=4.0.0'
-    peerDependenciesMeta:
-      webpack:
-        optional: true
-      webpack-dev-server:
-        optional: true
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -4391,8 +4337,8 @@ packages:
   neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
 
-  next-intlayer@9.5.0:
-    resolution: {integrity: sha512-TYXiCPHAM3+BnJX/gLvgKGXeR7qAGTC51JHHt/dwBhoS+12eeklYexiL2aVr43efseR8gCSCcBYZm8vDF3JRHw==}
+  next-intlayer@9.5.1:
+    resolution: {integrity: sha512-lUez5F5fHwuXYOrlZ6XcMzngPK0vKkkzABqqv4JJGYFXnRJhg/Ip4A1li7b+Wo2hWVhLOSFNFBb/2gin6MrGgA==}
     engines: {node: '>=14.18'}
     peerDependencies:
       next: '>=14.0.0'
@@ -4694,8 +4640,8 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
 
-  react-intlayer@9.5.0:
-    resolution: {integrity: sha512-LzbdsIfxz/ITfLDBNKUo2jnSTPeMcMAQjtESmW8g+8AhZaCg2cMuGI6MOr4fGzwc8wVG7jpFLfyoyI4FsdYgRQ==}
+  react-intlayer@9.5.1:
+    resolution: {integrity: sha512-FuxS+JxLgSI3gPM9hew46Fp9/t67epsEe3/e+7SbfiddRdAAQbE+Rb0y1IJ7ikjHEhHbuD8q/0nQp61HNmwTcQ==}
     engines: {node: '>=14.18'}
     peerDependencies:
       react: '>=16.0.0'
@@ -6181,22 +6127,14 @@ snapshots:
     optionalDependencies:
       '@types/node': 25.6.0
 
-  '@intlayer/analytics@9.5.0(react@19.2.5)':
+  '@intlayer/analytics@9.5.1(react@19.2.5)':
     dependencies:
-      '@intlayer/config': 9.5.0(react@19.2.5)
-      '@intlayer/core': 9.5.0(react@19.2.5)
-      '@intlayer/types': 9.5.0
+      '@intlayer/config': 9.5.1(react@19.2.5)
+      '@intlayer/core': 9.5.1(react@19.2.5)
+      '@intlayer/types': 9.5.1
     transitivePeerDependencies:
       - react
     optional: true
-
-  '@intlayer/api@9.5.0(react@19.2.5)':
-    dependencies:
-      '@intlayer/config': 9.5.0(react@19.2.5)
-      '@intlayer/types': 9.5.0
-      defu: 6.1.7
-    transitivePeerDependencies:
-      - react
 
   '@intlayer/api@9.5.1(react@19.2.5)':
     dependencies:
@@ -6294,17 +6232,6 @@ snapshots:
       - typescript
       - zod
 
-  '@intlayer/config@9.5.0(react@19.2.5)':
-    dependencies:
-      '@intlayer/types': 9.5.0
-      defu: 6.1.7
-      dotenv: 17.4.2
-      esbuild: 0.28.2
-      json5: 2.2.3
-      zod: 4.5.4
-    optionalDependencies:
-      react: 19.2.5
-
   '@intlayer/config@9.5.1(react@19.2.5)':
     dependencies:
       '@intlayer/types': 9.5.1
@@ -6315,17 +6242,6 @@ snapshots:
       zod: 4.5.4
     optionalDependencies:
       react: 19.2.5
-
-  '@intlayer/core@9.5.0(react@19.2.5)':
-    dependencies:
-      '@intlayer/api': 9.5.0(react@19.2.5)
-      '@intlayer/config': 9.5.0(react@19.2.5)
-      '@intlayer/dictionaries-entry': 9.5.0(react@19.2.5)
-      '@intlayer/types': 9.5.0
-      '@intlayer/unmerged-dictionaries-entry': 9.5.0(react@19.2.5)
-      defu: 6.1.7
-    transitivePeerDependencies:
-      - react
 
   '@intlayer/core@9.5.1(react@19.2.5)':
     dependencies:
@@ -6338,49 +6254,20 @@ snapshots:
     transitivePeerDependencies:
       - react
 
-  '@intlayer/dictionaries-entry@9.5.0(react@19.2.5)':
-    dependencies:
-      '@intlayer/config': 9.5.0(react@19.2.5)
-    transitivePeerDependencies:
-      - react
-
   '@intlayer/dictionaries-entry@9.5.1(react@19.2.5)':
     dependencies:
       '@intlayer/config': 9.5.1(react@19.2.5)
     transitivePeerDependencies:
       - react
 
-  '@intlayer/editor@9.5.0(react@19.2.5)':
+  '@intlayer/editor@9.5.1(react@19.2.5)':
     dependencies:
-      '@intlayer/config': 9.5.0(react@19.2.5)
-      '@intlayer/core': 9.5.0(react@19.2.5)
-      '@intlayer/types': 9.5.0
-      '@intlayer/unmerged-dictionaries-entry': 9.5.0(react@19.2.5)
+      '@intlayer/config': 9.5.1(react@19.2.5)
+      '@intlayer/core': 9.5.1(react@19.2.5)
+      '@intlayer/types': 9.5.1
+      '@intlayer/unmerged-dictionaries-entry': 9.5.1(react@19.2.5)
     transitivePeerDependencies:
       - react
-
-  '@intlayer/engine@9.5.0(@intlayer/babel@9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(react@19.2.5)(typescript@6.0.3)(zod@4.3.6)':
-    dependencies:
-      '@intlayer/api': 9.5.0(react@19.2.5)
-      '@intlayer/config': 9.5.0(react@19.2.5)
-      '@intlayer/core': 9.5.0(react@19.2.5)
-      '@intlayer/dictionaries-entry': 9.5.0(react@19.2.5)
-      '@intlayer/remote-dictionaries-entry': 9.5.0(react@19.2.5)
-      '@intlayer/types': 9.5.0
-      '@intlayer/unmerged-dictionaries-entry': 9.5.0(react@19.2.5)
-      '@parcel/watcher': 2.6.0
-      defu: 6.1.7
-      fast-glob: 3.3.3
-      recast: 0.24.0
-      simple-git: 3.36.0
-      zod-to-ts: 2.1.0(typescript@6.0.3)(zod@4.3.6)
-    optionalDependencies:
-      '@intlayer/babel': 9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6)
-    transitivePeerDependencies:
-      - react
-      - supports-color
-      - typescript
-      - zod
 
   '@intlayer/engine@9.5.1(@intlayer/babel@9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(react@19.2.5)(typescript@6.0.3)(zod@4.3.6)':
     dependencies:
@@ -6428,12 +6315,6 @@ snapshots:
       - typescript
       - zod
 
-  '@intlayer/remote-dictionaries-entry@9.5.0(react@19.2.5)':
-    dependencies:
-      '@intlayer/config': 9.5.0(react@19.2.5)
-    transitivePeerDependencies:
-      - react
-
   '@intlayer/remote-dictionaries-entry@9.5.1(react@19.2.5)':
     dependencies:
       '@intlayer/config': 9.5.1(react@19.2.5)
@@ -6442,37 +6323,13 @@ snapshots:
 
   '@intlayer/swc@9.5.1': {}
 
-  '@intlayer/types@9.5.0': {}
-
   '@intlayer/types@9.5.1': {}
-
-  '@intlayer/unmerged-dictionaries-entry@9.5.0(react@19.2.5)':
-    dependencies:
-      '@intlayer/config': 9.5.0(react@19.2.5)
-    transitivePeerDependencies:
-      - react
 
   '@intlayer/unmerged-dictionaries-entry@9.5.1(react@19.2.5)':
     dependencies:
       '@intlayer/config': 9.5.1(react@19.2.5)
     transitivePeerDependencies:
       - react
-
-  '@intlayer/webpack@9.5.0(@intlayer/babel@9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(react@19.2.5)(typescript@6.0.3)(webpack@5.110.3(postcss@8.5.23))(zod@4.3.6)':
-    dependencies:
-      '@intlayer/config': 9.5.0(react@19.2.5)
-      '@intlayer/dictionaries-entry': 9.5.0(react@19.2.5)
-      '@intlayer/engine': 9.5.0(@intlayer/babel@9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(react@19.2.5)(typescript@6.0.3)(zod@4.3.6)
-      '@intlayer/types': 9.5.0
-      fast-glob: 3.3.3
-    optionalDependencies:
-      webpack: 5.110.3(postcss@8.5.23)
-    transitivePeerDependencies:
-      - '@intlayer/babel'
-      - react
-      - supports-color
-      - typescript
-      - zod
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
@@ -7818,9 +7675,9 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vercel/analytics@2.0.1(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
+  '@vercel/analytics@2.0.1(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5)':
     optionalDependencies:
-      next: 16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      next: 16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react: 19.2.5
 
   '@web-kits/audio@0.1.0(react@19.2.5)':
@@ -8579,7 +8436,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6):
+  fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6):
     dependencies:
       '@orama/orama': 3.1.18
       estree-util-value-to-estree: 3.5.0
@@ -8605,21 +8462,21 @@ snapshots:
       '@types/mdast': 4.0.4
       '@types/react': 19.2.14
       lucide-react: 1.11.0(react@19.2.5)
-      next: 16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      next: 16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
       zod: 4.3.6
     transitivePeerDependencies:
       - supports-color
 
-  fumadocs-mdx@14.3.1(@types/mdast@4.0.4)(@types/mdx@2.0.13)(@types/react@19.2.14)(fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5):
+  fumadocs-mdx@14.3.1(@types/mdast@4.0.4)(@types/mdx@2.0.13)(@types/react@19.2.14)(fumadocs-core@16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react@19.2.5):
     dependencies:
       '@mdx-js/mdx': 3.1.1
       '@standard-schema/spec': 1.1.0
       chokidar: 5.0.0
       esbuild: 0.28.0
       estree-util-value-to-estree: 3.5.0
-      fumadocs-core: 16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6)
+      fumadocs-core: 16.8.4(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.4)(@types/mdast@4.0.4)(@types/react@19.2.14)(lucide-react@1.11.0(react@19.2.5))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(zod@4.3.6)
       js-yaml: 4.1.1
       mdast-util-mdx: 3.0.0
       mdast-util-to-markdown: 2.1.2
@@ -8636,7 +8493,7 @@ snapshots:
       '@types/mdast': 4.0.4
       '@types/mdx': 2.0.13
       '@types/react': 19.2.14
-      next: 16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      next: 16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react: 19.2.5
     transitivePeerDependencies:
       - supports-color
@@ -8949,9 +8806,9 @@ snapshots:
 
   jose@6.2.2: {}
 
-  jotai@2.19.1(@babel/core@8.0.1)(@babel/template@8.0.0)(@types/react@19.2.14)(react@19.2.5):
+  jotai@2.19.1(@babel/core@7.29.0)(@babel/template@8.0.0)(@types/react@19.2.14)(react@19.2.5):
     optionalDependencies:
-      '@babel/core': 8.0.1
+      '@babel/core': 7.29.0
       '@babel/template': 8.0.0
       '@types/react': 19.2.14
       react: 19.2.5
@@ -9652,27 +9509,25 @@ snapshots:
 
   neo-async@2.6.2: {}
 
-  next-intlayer@9.5.0(@intlayer/babel@9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@6.0.3)(webpack@5.110.3(postcss@8.5.23))(zod@4.3.6):
+  next-intlayer@9.5.1(@intlayer/babel@9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@6.0.3)(webpack@5.110.3(postcss@8.5.23))(zod@4.3.6):
     dependencies:
-      '@intlayer/config': 9.5.0(react@19.2.5)
-      '@intlayer/core': 9.5.0(react@19.2.5)
-      '@intlayer/dictionaries-entry': 9.5.0(react@19.2.5)
-      '@intlayer/engine': 9.5.0(@intlayer/babel@9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(react@19.2.5)(typescript@6.0.3)(zod@4.3.6)
-      '@intlayer/types': 9.5.0
-      '@intlayer/webpack': 9.5.0(@intlayer/babel@9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(react@19.2.5)(typescript@6.0.3)(webpack@5.110.3(postcss@8.5.23))(zod@4.3.6)
+      '@intlayer/config': 9.5.1(react@19.2.5)
+      '@intlayer/core': 9.5.1(react@19.2.5)
+      '@intlayer/dictionaries-entry': 9.5.1(react@19.2.5)
+      '@intlayer/engine': 9.5.1(@intlayer/babel@9.5.1(react@19.2.5)(typescript@6.0.3)(zod@4.3.6))(react@19.2.5)(typescript@6.0.3)(zod@4.3.6)
+      '@intlayer/types': 9.5.1
       defu: 6.1.7
-      next: 16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      next: 16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       node-loader: 2.1.0(webpack@5.110.3(postcss@8.5.23))
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
-      react-intlayer: 9.5.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      react-intlayer: 9.5.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
     optionalDependencies:
       webpack: 5.110.3(postcss@8.5.23)
     transitivePeerDependencies:
       - '@intlayer/babel'
       - supports-color
       - typescript
-      - webpack-dev-server
       - zod
 
   next-themes@0.4.6(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
@@ -9680,7 +9535,7 @@ snapshots:
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
 
-  next@16.3.5(@babel/core@8.0.1)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  next@16.3.5(@babel/core@7.29.0)(@types/node@25.6.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
       '@next/env': 16.3.5
       '@swc/helpers': 0.5.23
@@ -9689,7 +9544,7 @@ snapshots:
       postcss: 8.5.23
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
-      styled-jsx: 5.1.6(@babel/core@8.0.1)(react@19.2.5)
+      styled-jsx: 5.1.6(@babel/core@7.29.0)(react@19.2.5)
     optionalDependencies:
       '@next/swc-darwin-arm64': 16.3.5
       '@next/swc-darwin-x64': 16.3.5
@@ -10044,18 +9899,18 @@ snapshots:
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
 
-  react-intlayer@9.5.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  react-intlayer@9.5.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
-      '@intlayer/api': 9.5.0(react@19.2.5)
-      '@intlayer/config': 9.5.0(react@19.2.5)
-      '@intlayer/core': 9.5.0(react@19.2.5)
-      '@intlayer/dictionaries-entry': 9.5.0(react@19.2.5)
-      '@intlayer/editor': 9.5.0(react@19.2.5)
-      '@intlayer/types': 9.5.0
+      '@intlayer/api': 9.5.1(react@19.2.5)
+      '@intlayer/config': 9.5.1(react@19.2.5)
+      '@intlayer/core': 9.5.1(react@19.2.5)
+      '@intlayer/dictionaries-entry': 9.5.1(react@19.2.5)
+      '@intlayer/editor': 9.5.1(react@19.2.5)
+      '@intlayer/types': 9.5.1
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
     optionalDependencies:
-      '@intlayer/analytics': 9.5.0(react@19.2.5)
+      '@intlayer/analytics': 9.5.1(react@19.2.5)
 
   react-pdf@10.4.1(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
@@ -10524,12 +10379,12 @@ snapshots:
     dependencies:
       inline-style-parser: 0.2.7
 
-  styled-jsx@5.1.6(@babel/core@8.0.1)(react@19.2.5):
+  styled-jsx@5.1.6(@babel/core@7.29.0)(react@19.2.5):
     dependencies:
       client-only: 0.0.1
       react: 19.2.5
     optionalDependencies:
-      '@babel/core': 8.0.1
+      '@babel/core': 7.29.0
 
   sucrase@3.35.1:
     dependencies:
