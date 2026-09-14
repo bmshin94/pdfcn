@@ -210,7 +210,7 @@ const Page = (props: {
                 ) : null}
               </div>
               <DocsAds slot="content" />
-              <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0">
+              <div className="w-full flex-1 *:data-[slot=alert]:first:mt-0 *:data-[slot=pdf-preview]:first:mt-0">
                 {baseSwitcher && (
                   <DocsBaseSwitcher {...baseSwitcher} className="mb-4" />
                 )}
