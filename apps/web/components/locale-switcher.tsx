@@ -1,10 +1,9 @@
 "use client";
 
 import { getLocaleName, getLocalizedUrl } from "intlayer";
-import type { Locale } from "intlayer";
 import { LanguagesIcon } from "lucide-react";
-import { useIntlayer, useLocale } from "next-intlayer";
-import { useRouter } from "next/navigation";
+import { useIntlayer, useLocale, useLocaleStorage } from "next-intlayer";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -28,15 +27,8 @@ export const LocaleSwitcher = ({
   compact?: boolean;
 }) => {
   const content = useIntlayer("locale-switcher");
-  const { locale, pathWithoutLocale, availableLocales, setLocale } =
-    useLocale();
-  const router = useRouter();
-
-  const handleLocaleChange = (nextLocale: string) => {
-    const localeValue = nextLocale as Locale;
-    setLocale(localeValue);
-    router.push(getLocalizedUrl(pathWithoutLocale, localeValue));
-  };
+  const { locale, pathWithoutLocale, availableLocales } = useLocale();
+  const { setLocale } = useLocaleStorage();
 
   return (
     <DropdownMenu sounds>
@@ -65,14 +57,20 @@ export const LocaleSwitcher = ({
       >
         {availableLocales.map((availableLocale) => (
           <DropdownMenuItem
+            asChild
             className={cn(
               availableLocale === locale && "font-medium text-foreground"
             )}
             key={availableLocale}
-            onSelect={() => handleLocaleChange(availableLocale)}
             sound="click"
           >
-            {getLocaleName(availableLocale, availableLocale)}
+            <Link
+              href={getLocalizedUrl(pathWithoutLocale, availableLocale)}
+              hrefLang={availableLocale}
+              onClick={() => setLocale(availableLocale)}
+            >
+              {getLocaleName(availableLocale, availableLocale)}
+            </Link>
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
