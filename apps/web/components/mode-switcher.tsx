@@ -1,4 +1,3 @@
-/* eslint-disable typescript-eslint/no-explicit-any -- babel plugin transforms parameterized strings at build time */
 "use client";
 
 import { MonitorIcon, MoonIcon, SunIcon } from "lucide-react";
@@ -46,7 +45,7 @@ export const ModeSwitcher = () => {
             )}
             role="radio"
             aria-checked={isActive}
-            aria-label={(content.switchToTheme as any)({ value: option.value })}
+            aria-label={content.switchToTheme({ value: option.value })}
             onClick={() => {
               if (option.value === "dark") {
                 feedbackOff();

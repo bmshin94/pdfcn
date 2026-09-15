@@ -74,12 +74,12 @@ export const SiteSettings = () => {
         </div>
         <HapticsSwitcher />
       </div>
-      <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
+      {isMobile && (
+        <div className="flex items-center justify-between gap-4">
           <span className="w-12 text-sm">{text.language}</span>
+          <LocaleSwitcher />
         </div>
-        <LocaleSwitcher />
-      </div>
+      )}
     </div>
   );
 

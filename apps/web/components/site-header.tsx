@@ -1,22 +1,20 @@
+import { getLocalizedUrl } from "intlayer";
+import type { Locale } from "intlayer";
 import { useIntlayer } from "next-intlayer";
-import { getLocale } from "next-intlayer/server";
-import Link from "next/link";
 
 import { BrandContextMenu } from "@/components/brand-context-menu";
 import { CommandMenu } from "@/components/command-menu";
 import { LabsNav } from "@/components/labs-nav";
-import { LogoMark } from "@/components/logo";
+import { LocaleSwitcher } from "@/components/locale-switcher";
 import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { NavItemGithub } from "@/components/nav-item-github";
 import { SiteSettings } from "@/components/site-settings";
-import { SponsorLink } from "@/components/sponsor-link";
-import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { ROUTES } from "@/constants/routes";
 import { source } from "@/lib/source";
 
-export const SiteHeader = async () => {
-  const locale = await getLocale();
+export const SiteHeader = ({ locale }: { locale: string }) => {
   const tree = source.getPageTree(locale);
   const content = useIntlayer("site-header");
 
@@ -25,6 +23,10 @@ export const SiteHeader = async () => {
     { href: ROUTES.DOCS_COMPONENTS, label: String(content.navComponents) },
     { href: ROUTES.DOCS_BLOCKS, label: String(content.navBlocks) },
     { href: ROUTES.THEME_BUILDER, label: String(content.navThemeBuilder) },
+    {
+      href: getLocalizedUrl(ROUTES.SPONSOR, locale as Locale),
+      label: String(content.navSponsors),
+    },
   ];
 
   return (
@@ -40,23 +42,7 @@ export const SiteHeader = async () => {
             className="flex lg:hidden mr-2"
           />
           <div className="flex items-center">
-            <BrandContextMenu>
-              <Button
-                asChild
-                variant="ghost"
-                size="icon-sm"
-                className="hover:bg-transparent focus-visible:bg-transparent dark:hover:bg-transparent lg:size-9"
-                sound="click"
-              >
-                <Link
-                  href="https://shadcn-labs.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LogoMark className="size-5" />
-                </Link>
-              </Button>
-            </BrandContextMenu>
+            <BrandContextMenu />
             <span className="text-muted-foreground/50 ml-1">/</span>
             <LabsNav />
           </div>
@@ -65,8 +51,20 @@ export const SiteHeader = async () => {
             <div className="hidden w-full flex-1 md:flex md:w-auto md:flex-none">
               <CommandMenu navItems={navItems} tree={tree} />
             </div>
+            <Separator
+              className="hidden h-5! md:block"
+              orientation="vertical"
+            />
             <NavItemGithub />
-            <SponsorLink />
+            <Separator
+              className="hidden h-5! md:block"
+              orientation="vertical"
+            />
+            <LocaleSwitcher className="hidden md:flex" compact />
+            <Separator
+              className="hidden h-5! md:block"
+              orientation="vertical"
+            />
             <SiteSettings />
           </div>
         </div>

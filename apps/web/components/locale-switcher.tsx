@@ -2,47 +2,80 @@
 
 import { getLocaleName, getLocalizedUrl } from "intlayer";
 import type { Locale } from "intlayer";
-import { GlobeIcon } from "lucide-react";
+import { LanguagesIcon } from "lucide-react";
 import { useIntlayer, useLocale } from "next-intlayer";
 import { useRouter } from "next/navigation";
 
+import { Button } from "@/components/ui/button";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 
-export const LocaleSwitcher = () => {
+export const LocaleSwitcher = ({
+  className,
+  compact = false,
+}: {
+  className?: string;
+  compact?: boolean;
+}) => {
   const content = useIntlayer("locale-switcher");
   const { locale, pathWithoutLocale, availableLocales, setLocale } =
     useLocale();
   const router = useRouter();
 
+  const handleLocaleChange = (nextLocale: string) => {
+    const localeValue = nextLocale as Locale;
+    setLocale(localeValue);
+    router.push(getLocalizedUrl(pathWithoutLocale, localeValue));
+  };
+
   return (
-    <Select
-      value={locale}
-      onValueChange={(nextLocale: Locale) => {
-        setLocale(nextLocale);
-        router.push(getLocalizedUrl(pathWithoutLocale, nextLocale));
-      }}
-    >
-      <SelectTrigger
-        size="sm"
-        className="w-auto gap-1.5 border-none bg-transparent shadow-none"
-        aria-label={content.changeLanguage}
+    <DropdownMenu sounds>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <DropdownMenuTrigger asChild>
+            <Button
+              variant="ghost"
+              size={compact ? "icon-sm" : "sm"}
+              className={className}
+              aria-label={content.changeLanguage}
+            >
+              {compact ? (
+                <LanguagesIcon className="size-4" />
+              ) : (
+                <span>{getLocaleName(locale, locale)}</span>
+              )}
+            </Button>
+          </DropdownMenuTrigger>
+        </TooltipTrigger>
+        <TooltipContent>{getLocaleName(locale, locale)}</TooltipContent>
+      </Tooltip>
+      <DropdownMenuContent
+        align="end"
+        className="animate-none! rounded-lg shadow-none"
       >
-        <GlobeIcon className="size-4 text-muted-foreground" />
-        <SelectValue>{getLocaleName(locale, locale)}</SelectValue>
-      </SelectTrigger>
-      <SelectContent align="end">
         {availableLocales.map((availableLocale) => (
-          <SelectItem key={availableLocale} value={availableLocale}>
+          <DropdownMenuItem
+            className={cn(
+              availableLocale === locale && "font-medium text-foreground"
+            )}
+            key={availableLocale}
+            onSelect={() => handleLocaleChange(availableLocale)}
+            sound="click"
+          >
             {getLocaleName(availableLocale, availableLocale)}
-          </SelectItem>
+          </DropdownMenuItem>
         ))}
-      </SelectContent>
-    </Select>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };

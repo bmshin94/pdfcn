@@ -3,10 +3,12 @@
 import { DownloadIcon, SquareDashedIcon, TypeIcon } from "lucide-react";
 import { useIntlayer } from "next-intlayer";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 import { useCallback } from "react";
 import { toast } from "sonner";
 
 import { LogoMark, getLogoMarkSVG, getLogoTypeSVG } from "@/components/logo";
+import { Button } from "@/components/ui/button";
 import {
   ContextMenu,
   ContextMenuContent,
@@ -16,11 +18,7 @@ import {
 } from "@/components/ui/context-menu";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 
-export const BrandContextMenu = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+export const BrandContextMenu = () => {
   const content = useIntlayer("brand-context-menu");
   const { resolvedTheme } = useTheme();
   const { copyToClipboard } = useCopyToClipboard();
@@ -41,8 +39,23 @@ export const BrandContextMenu = ({
 
   return (
     <ContextMenu>
-      <ContextMenuTrigger asChild>{children}</ContextMenuTrigger>
-
+      <ContextMenuTrigger asChild>
+        <Button
+          asChild
+          variant="ghost"
+          size="icon-sm"
+          className="hover:bg-transparent focus-visible:bg-transparent dark:hover:bg-transparent lg:size-9"
+          sound="click"
+        >
+          <Link
+            href="https://shadcn-labs.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LogoMark className="size-5" />
+          </Link>
+        </Button>
+      </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuItem onClick={handleCopyLogomark}>
           <LogoMark />

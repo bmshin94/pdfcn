@@ -81,13 +81,13 @@ const sponsorPageContent = {
         "支持 pdfcn——精美的 React PDF 组件库。了解赞助等级、点星用户以及如何参与贡献。",
     }),
     metadataTitle: t({
-      en: "Sponsor",
-      es: "Patrocinar",
-      fr: "Sponsoriser",
+      en: "Sponsors",
+      es: "Patrocinadores",
+      fr: "Sponsors",
       ja: "スポンサー",
       ko: "스폰서",
-      pt: "Patrocinar",
-      "zh-CN": "赞助",
+      pt: "Patrocinadores",
+      "zh-CN": "赞助者",
     }),
     sponsorOnGithubLabel: t({
       en: "Sponsor on GitHub",

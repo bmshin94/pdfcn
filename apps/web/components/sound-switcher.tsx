@@ -1,4 +1,3 @@
-/* eslint-disable typescript-eslint/no-explicit-any -- babel plugin transforms parameterized strings at build time */
 "use client";
 
 import { Volume2, VolumeX } from "lucide-react";
@@ -45,7 +44,7 @@ export const SoundSwitcher = () => {
             )}
             role="radio"
             aria-checked={isActive}
-            aria-label={(content.switchSound as any)({ label: option.label })}
+            aria-label={content.switchSound({ label: option.label })}
             onClick={() => {
               if (option.value === value) {
                 return;
